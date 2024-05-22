@@ -1357,8 +1357,9 @@ border-radius: 50%;
         font-size: 20px;
     }
 #faq{
-margin-top:100px;
-	width:50vh;
+        margin-top: 500px;
+   
+        margin-bottom: 200px;
 	
 }
   }
