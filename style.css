@@ -150,21 +150,37 @@ h1 , h2, h3 , h4 , h5 , h6{
 /*Home*/
 
 #Home {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
-  
     justify-content: center;
     align-items: center;
     height: 90vh; 
+    overflow: hidden;
 }
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 30%;
+}
+
 #info {
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
+
 #info > * {
     margin: 10px 0;
 }
-#vertical img{
-   
+
+#vertical img {
     position: absolute;
     top: 15%;
     left: 20%; 
@@ -175,65 +191,68 @@ h1 , h2, h3 , h4 , h5 , h6{
     box-sizing: border-box;
 }
 
-#vertical img{
+#vertical img {
     width: 150px;
 }
-#app a{
+
+#app a {
     position: absolute;
-    top:23% ;
+    top: 23%;
     left: 25%;
 }
-#bpp b{
+
+#bpp b {
     position: absolute;
-    top:20% ;
+    top: 20%;
     left: 23%;
 }
 
-#ISTARC p{
+#ISTARC p {
     margin: 0;
     font-size: 42px;
     font-weight: bold;
- 
     background: linear-gradient(90deg, #5c5ec1, rgb(241, 150, 214));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
 }
-#welcome p{
+
+#welcome p {
     font-size: 42px;
     background: linear-gradient(90deg, #5c5ec1, rgb(241, 150, 214));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+}
 
-}
-p{
+p {
     color: white;
-	font-size:20px;
 }
-#p{
+
+#p {
     z-index: -1;
 }
-#p p{
+
+#p p {
     font-size: 25px;
     padding: 10px 80px;
     margin: auto;
     opacity: 54%;
 }
-#p-1 p{
+
+#p-1 p {
     font-size: 12px;
-    margin:120px 200px 40px 200px;
+    margin: 120px 200px 40px 200px;
     opacity: 54%;
     background: linear-gradient(90deg, #5c5ec1, rgb(241, 150, 214));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-
-
 }
+
 #btn {
     display: flex;
     gap: 10px;
@@ -242,24 +261,23 @@ p{
 
 #btn div a {
     display: inline-block;
-
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: bold;
-   
     border-radius: 5px;
 }
 
-#sponsor{
+#sponsor {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
-  
     justify-content: center;
     align-items: center;
 }
-#sponsor img{
+
+#sponsor img {
     width: 35%;
+  
 }
 
 #intro{
@@ -1235,10 +1253,10 @@ border-radius: 50%;
   
   }
   #intro{
-    margin-top: 450px;
+    margin-top: 200px;
   }
   p{
-    font-size: 20px;
+    font-size: 15px;
   }
   #vertical-img{
     display: none;
@@ -1304,6 +1322,10 @@ border-radius: 50%;
 .form a{
     font-size: 20px;
 }
+#faq{
+    margin-top: 250px;
+    margin-bottom: 25px;
+}
   }
 
 
@@ -1355,11 +1377,8 @@ border-radius: 50%;
     }
     .form a{
         font-size: 20px;
-    }
-#faq{
         margin-top: 500px;
-   
         margin-bottom: 100px;
-	
-}
+    }
+
   }
