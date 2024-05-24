@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
 </head>
 <body>
+    
+    <div class="cursor"></div>
     <section id="Home-Nav">
         <div id="header">
         <div id="logo">
@@ -327,7 +329,21 @@ AOS.init();
 AOS.init({offset: 300});
 AOS.init({delay: 20});
 </script>
+<script>
+    const cursor = document.querySelector('.cursor');
 
+document.addEventListener('mousemove', e => {
+cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+cursor.classList.add("expand");
+
+setTimeout(() => {
+cursor.classList.remove("expand");
+}, 500)
+})
+</script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
