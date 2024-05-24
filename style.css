@@ -7,7 +7,72 @@
 
 body{
     background-color: #0b0c15;
+    margin: 0;
+
 }
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 8px solid gray;
+    border-radius: 50%;
+    opacity: .5;
+    top: -9px;
+    left: -9px;
+    animation: cursorAnim2 .5s infinite alternate;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.4);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid rgb(237, 176, 255);
+}
+
 h1 , h2, h3 , h4 , h5 , h6{
     color: white;
     opacity: 74%;
@@ -130,24 +195,42 @@ h1 , h2, h3 , h4 , h5 , h6{
             opacity: 100%;
 }
 
-#button , #Participate{
+#button, #Participate {
     padding: 6px 20px;
     border: 1px solid pink;
     background: linear-gradient(90deg, #5c5ec1, rgb(241, 150, 214));
     border-radius: 100px;
+    position: relative;
+    overflow: hidden;
 }
+
 #button a {
     display: inline-block;
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: bold;
-  
     border-radius: 5px;
 }
-#button:hover , #Participate:hover{
+
+#button:hover, #Participate:hover {
     box-shadow: 0 0 10px #f29ff5, 0 0 20px #8653c0, 0 0 40px #f29ff5, 0 0 80px #8653c0;
 }
-/*Home*/
+
+#button .ripple, #Participate .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: rippleAnim 0.5s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
 
 #Home {
     position: relative;
@@ -1253,7 +1336,7 @@ border-radius: 50%;
   
   }
   #intro{
-    margin-top: 260px;
+    margin-top: 200px;
   }
   p{
     font-size: 15px;
@@ -1341,7 +1424,6 @@ border-radius: 50%;
     }
     .contactUs{
         padding: 20px;
-	    margin-top: 300px;
     }
     .box{
         grid-template-columns: 1fr;
