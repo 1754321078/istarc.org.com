@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // FAQ accordion functionality
+
     const faqItems = document.querySelectorAll('.faq-item');
   
     faqItems.forEach(item => {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // Chatbot functionality
+
     const chatbotIcon = document.querySelector('.chatbot-icon');
     const chatbot = document.querySelector('.chatbot');
     const chatbotClose = document.querySelector('.chatbot-close');
@@ -57,8 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return "Sorry, I didn't understand that. Can you please ask something else?";
     }
-  
-    // Make chatbot draggable
+
     let isDragging = false;
     let offsetX, offsetY;
   
@@ -82,3 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+
+
+
+  const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+cursor.classList.add("expand");
+
+setTimeout(() => {
+cursor.classList.remove("expand");
+}, 500)
+})
