@@ -9,6 +9,8 @@
     
 </head>
 <body>
+    
+    <div class="cursor"></div>
     <section id="Home-Nav">
         <div id="header">
         <div id="logo">
@@ -81,7 +83,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur </p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
             </div>
     </div>
 
@@ -93,7 +96,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
             </div>
        
     </div>
@@ -106,7 +110,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
          
         </div>
     </div>
@@ -118,7 +123,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
           
         </div>
     </div>
@@ -130,7 +136,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
             
         </div>
     </div>
@@ -142,7 +149,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
           
         </div>
     </div>
@@ -155,7 +163,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
            
         </div>
     </div>
@@ -167,7 +176,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
             
         </div>
     </div>
@@ -179,7 +189,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
            
         </div>
     </div>
@@ -191,7 +202,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
             
         </div>
     </div>
@@ -203,7 +215,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
             
         </div>
     </div>
@@ -215,7 +228,8 @@
                     1<sup>st</sup> ISTARC SCIENCE AND TECHNOLOGY SCIENCE FESTIVAL
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illum itaque,
-                    consequuntur</p>
+                    consequuntur omnis animi temporibus numquam architecto, maiores sint
+non provident illo laborum quod error? Distinctio eum esse molestiae.</p>
            
         </div>
     </div>
@@ -322,5 +336,20 @@ if (close) {
             AOS.init({offset: 300})
             AOS.init({delay: 20})
           </script>
+             <script>
+                const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+cursor.classList.add("expand");
+
+setTimeout(() => {
+    cursor.classList.remove("expand");
+}, 500)
+})
+      </script>
 </body>
 </html>
