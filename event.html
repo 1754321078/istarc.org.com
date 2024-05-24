@@ -9,6 +9,8 @@
     
 </head>
 <body>
+    
+    <div class="cursor"></div>
     <section id="Home-Nav">
         <div id="header">
         <div id="logo">
@@ -69,7 +71,7 @@
                 <div id="texture">
                 <div id="event-txt">
                 <h3>IDEAL SCIENCE AND TECHNOLOGY <span style="color: rgb(248, 171, 248);">SOLO PASS</span></h3> <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis culpa minus magni ut dolor!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut culpa eveniet cum laboriosam. Vero vel magnam rem harum officia deserunt enim error inventore dolore, culpa minus magni ut dolor!</p>
             </div>
             <div id="part">
                 <a>Participate Now !</a>
@@ -219,5 +221,20 @@
                 AOS.init({offset: 300})
                 AOS.init({delay: 20})
               </script>
+                 <script>
+                    const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+    cursor.classList.add("expand");
+
+    setTimeout(() => {
+        cursor.classList.remove("expand");
+    }, 500)
+})
+          </script>
     </body>
     </html>
