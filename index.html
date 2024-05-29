@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
-  
 </head>
 <body>
+    <style>
+        @media (max-width: 799px) {
+            #faq {
+                margin-top: 250px;
+            }
+        }
+    </style>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
      <div class="cursor"></div>
     <section id="Home-Nav">
         <div id="header">
@@ -51,8 +60,8 @@
             <li><a href="faq.html">Faq</a></li>
             <li><a href="gallery.html">Gallery</a></li>
        <a href="#" id="close"><i class="far fa-times" style="color: white;"></i></a> </ul>
-    <div id="button">
-        <a>Register Now</a></div>  
+    <div id="button" onclick="audio.play()">
+        <a href="#" >Register Now</a></div>  
                   <div id="mobile">
                   <i id="bar" class="fas fa-outdent"  style="color: white;"></i>
                   </div> 
@@ -82,24 +91,18 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae aliquam distinctio alias odio eaque eveniet placeat quasi, tempore magni explicabo temporibus quo nisi nostrum voluptatum veritatis eum pariatur esse!</p>
             </div>
             <div id="btn">
-                <div id="Participate">
+                <div id="Participate" onclick="audio.play()" >
                     <a>Participate Now</a>
                 </div>
-                <div id="button">
-                    <a>Explore More</a>
+                <div id="button"onclick="audio.play()">
+                    <a >Explore More</a>
                 </div>
             </div>
             <div id="p-1">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae aliquam distinctio alias odio eaque eveniet placeat quasi, tempore magni explicabo temporibus quo nisi nostrum voluptatum veritatis eum pariatur esse!</p>
+               
             </div>
-            <div id="sponsor">
-                <a><img src="img/sponsor.png"></a>
-                <a><img src="img/sponsor.png"></a>
-                <a><img src="img/sponsor.png"></a>
-                <a><img src="img/sponsor.png"></a>
-                <a><img src="img/sponsor.png"></a>
-            </div>
-        </div>
+           
+
     </section>
     
 
@@ -127,6 +130,38 @@
             <a>Facing any problems? Go to <a href="" style="color:rgb(236, 134, 206) ;">FAQ</a></a>
         </div></div>
     </section>
+
+
+<section id="sponsor">
+        <h1>Meet Our Sponsors</h1>
+    <div id="cent-wrapper">
+        <div class="wrapper">
+         <div class="item item1">
+           <h3>Lorem Ipsum</h3>
+         </div>
+         <div class="item item2">
+            <h3>Lorem Ipsum</h3>
+         </div>
+         <div class="item item3">
+            <h3>Lorem Ipsum</h3>
+         </div>
+         <div class="item item4">
+            <h3>Lorem Ipsum</h3>
+         </div>
+         <div class="item item5">
+            <h3>Lorem Ipsum</h3>
+         </div>
+         <div class="item item6">
+            <h3>Lorem Ipsum</h3>
+         </div>
+         <div class="item item7">
+            <h3>Lorem Ipsum</h3>
+         </div>
+        
+
+    </div></div>
+</section>
+
 
     <footer class="s-1">
         <div class="c">
@@ -172,7 +207,14 @@
           <p>© 2024, ISTARC Created by Sohorab Mahmud Fahim.<a href="https://www.facebook.com/fahimlwebdeveloper" style="font-weight:600;">Hire Now.</a></p>
       </div>
       
-      
+      <script>
+        window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const content = document.getElementById('content');
+        preloader.style.display = 'none';
+        content.style.display = 'block';
+    });
+        </script>
    <script>
 const bar = document.getElementById('bar');
 const close = document.getElementById('close');
@@ -219,6 +261,21 @@ document.addEventListener('click', () => {
 })
           </script>
 
- 
+<script src="script.js"></script>
+   <script>
+     
+        document.addEventListener('DOMContentLoaded', () => {
+            window.audio = new Audio();
+            audio.src = './img/click.mp3';
+        });
+
+        function playAudio() {
+            if (window.audio) {
+                audio.play();
+            } else {
+                console.error('Audio element not found');
+            }
+        }
+    </script>
 </body>
 </html>
