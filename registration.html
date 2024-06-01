@@ -410,34 +410,6 @@ document.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
     const submitButton = document.querySelector('.submit-button');
-
-    function checkFormFields() {
-        let allFilled = true;
-        formInputs.forEach(input => {
-            if (!input.value || (input.type === 'checkbox' && !input.checked)) {
-                allFilled = false;
-            }
-        });
-        return allFilled;
-    }
-
-    function updateSubmitButton() {
-        if (checkFormFields()) {
-            submitButton.disabled = false;
-            submitButton.style.cursor = "pointer";
-        } else {
-            submitButton.disabled = true;
-            submitButton.style.cursor = "not-allowed";
-        }
-    }
-
-    formInputs.forEach(input => {
-        input.addEventListener('input', updateSubmitButton);
-        if (input.type === 'checkbox') {
-            input.addEventListener('change', updateSubmitButton);
-        }
-    });
-
     submitButton.addEventListener('click', function(event) {
         if (!submitButton.disabled) {
             event.preventDefault();
@@ -445,8 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    updateSubmitButton();
-});
+  
 </SCRIPT>
 </body>
 </html>
