@@ -294,30 +294,29 @@
 }
 </style>
 <script>
-<div id="success-popup">Your message has been sent successfully!</div>
-const bar = document.getElementById('bar');
-const close = document.getElementById('close');
-const nav = document.getElementById('navbar');
-const successPopup = document.getElementById('success-popup');
-
-if (bar) {
-    bar.addEventListener('click', () => {
-        nav.classList.add('active');
-        nav.style.zIndex = '1000';
-    });
-}
-
-if (close) {
-    close.addEventListener('click', () => {
-        nav.classList.remove('active');
-        nav.style.zIndex = 'initial'; 
-    });
-}
-
-function sendEmail(event) {
-    event.preventDefault();
-
-    const signAs = document.getElementById('signAs').value;
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+    const successPopup = document.getElementById('success-popup');
+    
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active');
+            nav.style.zIndex = '1000';
+        });
+    }
+    
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active');
+            nav.style.zIndex = 'initial'; 
+        });
+    }
+    
+    function sendEmail(event) {
+        event.preventDefault();
+    
+        const signAs = document.getElementById('signAs').value;
     const eventType = document.getElementById('eventType').value;
     const teamLeader = document.getElementById("teamLeader").value;
     const memberName = document.getElementById("Member-name").value;
@@ -331,7 +330,7 @@ function sendEmail(event) {
     const member3Email = document.getElementById("member3Email").value;
     const transactionId = document.getElementById("transactionId").value;
     const transactionNum = document.getElementById("transactionNum").value;
-
+    
     const ebody = `
         <b>Sign Us As: </b> ${signAs}
         <br/>
@@ -362,33 +361,35 @@ function sendEmail(event) {
         <b>Transaction Number: </b> ${transactionNum}
         <br/>
     `;
-
+    
         Email.send({
-        SecureToken: "296c6f02-4cb4-4799-ac4d-b98999b3dfa3",
-        To: 'fahimisc1754@gmail.com',
-        From: "sohorabdue@gmail.com",
-        Subject: "New Message from Contact Form",
-        Body: ebody
-    }).then(
-        response => {
-            showPopup("Your message has been sent successfully!");
-        }
-    ).catch(
-        error => {
-            showPopup("Failed to send message. Please try again.");
-        }
-    );
-}
-
-function showPopup(message) {
-    successPopup.textContent = message;
-    successPopup.style.display = "block";
-    setTimeout(() => {
-        successPopup.style.display = "none";
-    }, 5000);
-}
-</script>
+            SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
+            To: 'sohorabdue@gmail.com',
+            From: "sohorabdue@gmail.com",
+            Subject: "Registration Form",
+            Body: ebody
+        }).then(
+            response => {
+                showPopup("Your message has been sent successfully!");
+            }
+        ).catch(
+            error => {
+                showPopup("Failed to send message. Please try again.");
+            }
+        );
+    }
+    
+    function showPopup(message) {
+        successPopup.textContent = message;
+        successPopup.style.display = "block";
+        setTimeout(() => {
+            successPopup.style.display = "none";
+        }, 5000);
+    }
+    </script>
+    
     <script src="https://smtpjs.com/v3/smtp.js">
+   
 </script>
 <SCRIPT>
 const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
