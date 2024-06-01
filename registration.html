@@ -182,7 +182,7 @@
                                 <a href="#" target="_blank" class="link">&nbsp;Accept Our Privacy And Policy</a>
                             </label>
                         </div>
-                        <button class="submit-button" type="submit" disabled>
+                        <button class="submit-button" type="submit" value="submit" disabled>
                       Submit
                         </button>
                     </form>
@@ -366,8 +366,8 @@ function sendEmail(event) {
     `;
 
         Email.send({
-        SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
-        To: 'sohorabdue@gmail.com',
+        SecureToken: "296c6f02-4cb4-4799-ac4d-b98999b3dfa3",
+        To: 'fahimisc1754@gmail.com',
         From: "sohorabdue@gmail.com",
         Subject: "New Message from Contact Form",
         Body: ebody
@@ -389,6 +389,8 @@ function showPopup(message) {
         successPopup.style.display = "none";
     }, 5000);
 }
+</script>
+    <script src="https://smtpjs.com/v3/smtp.js">
 </script>
 <SCRIPT>
 const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
