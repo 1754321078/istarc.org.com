@@ -107,7 +107,7 @@
         <div class="box">
             <div class="contact form">
                 <a>Send a Message</a>
-                <form onsubmit="sendEmail(event)">
+                <form onsubmit="sendEmail(event)"  onsubmit="handleSubmit(event)">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
@@ -137,7 +137,7 @@
                         </div>
                         <div class="row50">
                             <div class="inputBox">
-                                <input type="submit" value="Send">
+                                <input type="submit" value="Send" class="submit-con">
                             </div>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
     <div id="event-part">
         <h4>Do you want to participate?</h4><br><br>
         <div id="part">
-            <a>Participate Now !</a>
+            <a href="registration.html">Participate Now !</a>
         </div>
     </div>
  
@@ -278,7 +278,12 @@
 </style>
 
 <div id="success-popup">Your message has been sent successfully!</div>
-
+<SCRIPT>
+ function handleSubmit(event) {
+            event.preventDefault();
+            window.location.href = 'registrationsuccess.html';
+        }
+</SCRIPT>
 <script>
 const bar = document.getElementById('bar');
 const close = document.getElementById('close');
