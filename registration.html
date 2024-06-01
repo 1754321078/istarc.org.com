@@ -182,7 +182,7 @@
                                 <a href="#" target="_blank" class="link">&nbsp;Accept Our Privacy And Policy</a>
                             </label>
                         </div>
-                  <input type="submit" value="send" style="background-color:rgba(0, 255, 128, 0.562);padding:20px 10px;>
+                  <input type="submit" value="send" class="submit-button">
                     </form>
                 </div>
             </div>  
@@ -407,41 +407,46 @@ document.addEventListener('click', () => {
 })
           </script>
 <SCRIPT>
-const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
-const submitButton = document.querySelector('.submit-button');
+document.addEventListener('DOMContentLoaded', () => {
+    const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
+    const submitButton = document.querySelector('.submit-button');
 
-function checkFormFields() {
-    let allFilled = true;
+    function checkFormFields() {
+        let allFilled = true;
+        formInputs.forEach(input => {
+            if (!input.value || (input.type === 'checkbox' && !input.checked)) {
+                allFilled = false;
+            }
+        });
+        return allFilled;
+    }
+
+    function updateSubmitButton() {
+        if (checkFormFields()) {
+            submitButton.disabled = false;
+            submitButton.style.cursor = "pointer";
+        } else {
+            submitButton.disabled = true;
+            submitButton.style.cursor = "not-allowed";
+        }
+    }
+
     formInputs.forEach(input => {
-        if (!input.value || (input.type === 'checkbox' && !input.checked)) {
-            allFilled = false;
+        input.addEventListener('input', updateSubmitButton);
+        if (input.type === 'checkbox') {
+            input.addEventListener('change', updateSubmitButton);
         }
     });
-    return allFilled;
-}
 
-function updateSubmitButton() {
-    if (checkFormFields()) {
-        submitButton.disabled = false;
-        submitButton.style.cursor = "pointer";
-    } else {
-        submitButton.disabled = true;
-        submitButton.style.cursor = "not-allowed";
-    }
-}
+    submitButton.addEventListener('click', function(event) {
+        if (!submitButton.disabled) {
+            event.preventDefault();
+            window.location.href = 'registrationsuccess.html';
+        }
+    });
 
-formInputs.forEach(input => {
-    input.addEventListener('input', updateSubmitButton);
+    updateSubmitButton();
 });
-
-submitButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    if (!submitButton.disabled) {
-        window.location.href = 'registrationsuccess.html';
-    }
-});
-
-updateSubmitButton();
 </SCRIPT>
 </body>
 </html>
