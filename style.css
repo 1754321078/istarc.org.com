@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -218,8 +220,8 @@ h1 , h2, h3 , h4 , h5 , h6{
 
 #button, #Participate {
     padding: 6px 20px;
-    border: 1px solid pink;
-    background: linear-gradient(90deg, #5c5ec1, rgb(241, 150, 214));
+    border: 2px solid rgb(255, 178, 192);
+    background: rgb(246, 200, 255);
     border-radius: 100px;
     position: relative;
     overflow: hidden;
@@ -1503,16 +1505,16 @@ select:focus::before {
   }
   
   .instructions {
-    list-style: none;
+
     padding: 0;
-    margin: 20px 0;
+    margin: 20px 40px;
     text-align: left;
   }
   
   .instructions li {
-    margin-bottom: 10px;
+   
     font-size: 20px;
-    list-style: none;
+
 
   }
   
@@ -1527,7 +1529,10 @@ select:focus::before {
     text-decoration: underline;
     color: #1a73e8;
   }
-  
+  .instructions li a{
+    color: white;
+    font-size: 14px;
+  }
   .share-button {
     background: none;
     border: none;
@@ -1648,6 +1653,9 @@ select:focus::before {
     width: 20px;
     height: 20px;
   }
+
+
+  
   
   @keyframes fadeIn {
     from {
@@ -1692,9 +1700,9 @@ select:focus::before {
       transform: translateX(0);
     }
   }
-  
 
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 1468px) {
  
         .container {
             padding: 0;
@@ -1739,9 +1747,17 @@ select:focus::before {
             margin-top: 20px;
             animation: slideInLeft 1s forwards;
             margin: 0 40px;
-        }
+        } .form-group{
+        flex-wrap: nowrap;
     }
-    
+    }
+    @media screen and (max-width: 800px) {
+
+        .form-group{
+          flex-wrap: wrap;
+        }
+        }
+         
 
 
 
