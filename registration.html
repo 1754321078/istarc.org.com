@@ -6,7 +6,6 @@
     <title>ISTARC</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
 </head>
 <body>
@@ -128,12 +127,12 @@
                         </div>
                         <div class="form-group">
                             <div class="form-item" id="t3">
-                                <label for="teamName">Your email address *</label>
-                                <input type="email" id="youremail" placeholder="Enter team email address" required>
+                                <label for="youremail">Your email address *</label>
+                                <input type="text" id="youremail" placeholder="Enter team email address" required>
                             </div>
                             <div class="form-item" id="t4">
-                                <label for="teamLeaderEmail">Your mobile number *</label>
-                                <input type="text" id="yournumber" placeholder="Enter your mobile number" required>
+                                <label for="yournumber">Your mobile number *</label>
+                                <input type="email" id="yournumber" placeholder="Enter your mobile number" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -178,8 +177,8 @@
                                     <input type="email" id="member3Email" placeholder="Enter member 3's email address" required>
                                 </div>
                                 <div class="form-item" id="t14">
-                                    <label for="member3Email">CA reference *</label>
-                                    <input type="text" id="CA reference" placeholder="Optional" required>
+                                    <label for="CA">CA reference *</label>
+                                    <input type="text" id="CA" placeholder="Optional">
                                 </div>
                             </div>
                         </div>
@@ -204,17 +203,12 @@
                                 <a href="#" target="_blank" class="link">&nbsp;Accept Our Privacy And Policy</a>
                             </label>
                         </div>
-                  <input type="submit" value="send" class="submit-button" onclick="redirectToSuccessPage()">
+                  <input type="submit" value="send" class="submit-button">
                     </form>
                 </div>
             </div>  
         </section>
         
-<script>
-    function redirectToSuccessPage() {
-        window.location.href = 'registrationsuccess.html';
-    }
-</script>
 
 
 
@@ -357,6 +351,10 @@
     const member3Email = document.getElementById("member3Email").value;
     const transactionId = document.getElementById("transactionId").value;
     const transactionNum = document.getElementById("transactionNum").value;
+    const memberEmail = document.getElementById("youremail").value;
+    const memberNumber = document.getElementById("yournumber").value;
+    const ca = document.getElementById("CA").value;
+    
 
     if (selectedEvent === 'Wall Magazine') {
         document.getElementById('t1').style.display = 'none';
@@ -406,77 +404,42 @@
         document.getElementById('t13').style.display = 'none';
     }
 
- const ebody = `
-    <style>
-
-        @keyframes glowing {
-            0% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
-            50% { text-shadow: 0 0 20px rgba(255,255,255,0.9); }
-            100% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideIn {
-            0% {
-                transform: translateY(-100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
-    <b style="animation: glowing 2s infinite;">Sign Us As: </b> ${signAs}
-    <br/>
-    <b style="animation: zoomIn 1s;">Event Type: </b> ${eventType}
-    <br/>
-    <b style="animation: slideIn 1s;">Team Leader: </b> ${teamLeader}
-    <br/>
-    <b style="animation: rotate 2s linear infinite;">Your Name: </b> ${memberName}
-    <br/>
-    <b style="animation: glowing 2s infinite;">Team Name: </b> ${teamName}
-    <br/>
-    <b style="animation: slideIn 1s;">Team Leader Email: </b> ${teamLeaderEmail}
-    <br/>
-    <b style="animation: zoomIn 1s;">Your Email Address: </b> ${teamLeaderEmail}
-    <br/>
-    <b style="animation: glowing 2s infinite;">Your Mobile Number: </b> ${transactionNum}
-    <br/>
-    <b style="animation: rotate 2s linear infinite;">Member 1 Name: </b> ${member1Name}
-    <br/>
-    <b style="animation: slideIn 1s;">Member 1 Email: </b> ${member1Email}
-    <br/>
-    <b style="animation: zoomIn 1s;">Member 2 Name: </b> ${member2Name}
-    <br/>
-    <b style="animation: glowing 2s infinite;">Member 2 Email: </b> ${member2Email}
-    <br/>
-    <b style="animation: rotate 2s linear infinite;">Member 3 Name: </b> ${member3Name}
-    <br/>
-    <b style="animation: slideIn 1s;">Member 3 Email: </b> ${member3Email}
-    <br/>
-    <b style="animation: glowing 2s infinite;">Transaction ID: </b> ${transactionId}
-    <br/>
-    <b style="animation: rotate 2s linear infinite;">Transaction Number: </b> ${transactionNum}
-    <b style="animation: rotate 2s linear infinite;">CA Reference: </b> ${CA}
-    <br/>
-`;
-
+    const ebody = `
+    <b>Sign Us As: </b> ${signAs}
+        <br/>
+        <b>Event Type: </b> ${eventType}
+        <br/>
+        <b>Team Leader: </b> ${teamLeader}
+        <br/>
+        <b>Participant's Name: </b> ${memberName}
+        <br/>
+        <b>Participant's Email Address: </b> ${memberEmail}
+        <br/>
+        <b>Participant's Mobile Number: </b> ${memberNumber}
+        <br/>
+        <b>Team Name: </b> ${teamName}
+        <br/>
+        <b>Team Leader Email: </b> ${teamLeaderEmail}
+        <br/>
+        <b>Member 1 Name: </b> ${member1Name}
+        <br/>
+        <b>Member 1 Email: </b> ${member1Email}
+        <br/>
+        <b>Member 2 Name: </b> ${member2Name}
+        <br/>
+        <b>Member 2 Email: </b> ${member2Email}
+        <br/>
+        <b>Member 3 Name: </b> ${member3Name}
+        <br/>
+        <b>Member 3 Email: </b> ${member3Email}
+        <br/>
+        <b>Transaction ID: </b> ${transactionId}
+        <br/>
+        <b>Transaction Number: </b> ${transactionNum}
+        <br/>
+        <b>CA Referencve: </b> ${ca}
+        <br/>
+    `;
 
     Email.send({
         SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
