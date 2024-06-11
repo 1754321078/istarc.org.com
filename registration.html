@@ -94,6 +94,7 @@
                         <div id="sign">
                             <h3>Sign Us As : 
                                 <select id="signAs">
+                                   
                                     <option value="Participant">Participant</option>
                                     <option value="Campus Ambassador">Campus Ambassador</option>
                                 </select>
@@ -101,63 +102,83 @@
                         </div>
                         <div id="event">
                             <h3>Event : 
-                                <select id="eventType">
+                                <select id="eventType"> 
+                                    <option value="selectevent">Select your event type</option>
                                     <option value="Wall Magazine">Wall Magazine</option>
-                                    <option value="Project Display">Project Display</option>
+                                    <option value="Robotics Olympiad">Robotics Olympiad</option>
+                                    <option value="Google It">Google It</option>
+                                    <option value="Code Debbugging">Code Debugging</option>
+                                    <option value="Scrap Book">Scrap Book</option>
+                                    <option value="Project Display">Soccer Robot</option>
                                 </select>
                             </h3>
                         </div>
                     </div>
                     <form class="participation-form" onsubmit="sendEmail(event)"  onsubmit="handleSubmit(event)">
                         <div class="form-group">
-                            <div class="form-item">
+                            <div class="form-item" id="t1">
                                 <label for="teamLeader">Team leader *</label>
                                 <input type="text" id="teamLeader" placeholder="Enter team leader's full name" required>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item" id="t2" >
                                 <label for="Member-name">Your Name *</label>
                                 <input type="text" id="Member-name" placeholder="Enter your name" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-item">
+                            <div class="form-item" id="t3">
+                                <label for="teamName">Your email address *</label>
+                                <input type="text" id="youremail" placeholder="Enter team email address" required>
+                            </div>
+                            <div class="form-item" id="t4">
+                                <label for="teamLeaderEmail">Your mobile number *</label>
+                                <input type="email" id="yournumber" placeholder="Enter your mobile number" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-item" id="t5">
                                 <label for="teamName">Team name *</label>
                                 <input type="text" id="teamName" placeholder="Enter team name" required>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item" id="t6">
                                 <label for="teamLeaderEmail">Team leader (email address) *</label>
                                 <input type="email" id="teamLeaderEmail" placeholder="Enter team leader's email address" required>
                             </div>
                         </div>
-                        <div class="members-group">
+
+                        <div class="members-group" id="t8">
                             <div class="member">
                                 <div class="form-item">
-                                    <label for="member1Name">Member 1 (full name)</label>
+                                    <label for="member1Name">Member 1 (full name) *</label>
                                     <input type="text" id="member1Name" placeholder="Enter member 1's full name" required>
                                 </div>
-                                <div class="form-item">
-                                    <label for="member1Email">Member 1 (email address)</label>
+                                <div class="form-item" id="t9">
+                                    <label for="member1Email">Member 1 (email address) *</label>
                                     <input type="email" id="member1Email" placeholder="Enter member 1's email address" required>
                                 </div>
                             </div>
-                            <div class="member">
+                            <div class="member" id="t10">
                                 <div class="form-item">
-                                    <label for="member2Name">Member 2 (full name)</label>
+                                    <label for="member2Name">Member 2 (full name) *</label>
                                     <input type="text" id="member2Name" placeholder="Enter member 2's full name" required>
                                 </div>
-                                <div class="form-item">
-                                    <label for="member2Email">Member 2 (email address)</label>
+                                <div class="form-item" id="t11">
+                                    <label for="member2Email">Member 2 (email address) *</label>
                                     <input type="email" id="member2Email" placeholder="Enter member 2's email address" required>
                                 </div>
                             </div>
                             <div class="member">
-                                <div class="form-item">
-                                    <label for="member3Name">Member 3 (full name)</label>
+                                <div class="form-item" id="t12">
+                                    <label for="member3Name">Member 3 (full name) *</label>
                                     <input type="text" id="member3Name" placeholder="Enter member 3's full name" required>
                                 </div>
-                                <div class="form-item">
-                                    <label for="member3Email">Member 3 (email address)</label>
+                                <div class="form-item" id="t13">
+                                    <label for="member3Email">Member 3 (email address) *</label>
                                     <input type="email" id="member3Email" placeholder="Enter member 3's email address" required>
+                                </div>
+                                <div class="form-item" id="t14">
+                                    <label for="member3Email">CA reference *</label>
+                                    <input type="text" id="CA reference" placeholder="Optional" required>
                                 </div>
                             </div>
                         </div>
@@ -166,11 +187,11 @@
                             <li><strong>Your money will not be refunded if you are absent.</strong></li>
                         </ul>
                         <div class="form-group">
-                            <div class="form-item">
+                            <div class="form-item" id="t15">
                                 <label for="transactionId">Transaction ID *</label>
                                 <input type="text" id="transactionId" placeholder="Enter transaction ID" required>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item" id="t16">
                                 <label for="transactionNum">Number *</label>
                                 <input type="text" id="transactionNum" placeholder="Enter number" required>
                                 <p class="note"></p>
@@ -314,9 +335,9 @@
     }
     
     function sendEmail(event) {
-        event.preventDefault();
-    
-        const signAs = document.getElementById('signAs').value;
+    event.preventDefault();
+
+    const signAs = document.getElementById('signAs').value;
     const eventType = document.getElementById('eventType').value;
     const teamLeader = document.getElementById("teamLeader").value;
     const memberName = document.getElementById("Member-name").value;
@@ -330,54 +351,144 @@
     const member3Email = document.getElementById("member3Email").value;
     const transactionId = document.getElementById("transactionId").value;
     const transactionNum = document.getElementById("transactionNum").value;
-    
-    const ebody = `
-        <b>Sign Us As: </b> ${signAs}
-        <br/>
-        <b>Event Type: </b> ${eventType}
-        <br/>
-        <b>Team Leader: </b> ${teamLeader}
-        <br/>
-        <b>Your Name: </b> ${memberName}
-        <br/>
-        <b>Team Name: </b> ${teamName}
-        <br/>
-        <b>Team Leader Email: </b> ${teamLeaderEmail}
-        <br/>
-        <b>Member 1 Name: </b> ${member1Name}
-        <br/>
-        <b>Member 1 Email: </b> ${member1Email}
-        <br/>
-        <b>Member 2 Name: </b> ${member2Name}
-        <br/>
-        <b>Member 2 Email: </b> ${member2Email}
-        <br/>
-        <b>Member 3 Name: </b> ${member3Name}
-        <br/>
-        <b>Member 3 Email: </b> ${member3Email}
-        <br/>
-        <b>Transaction ID: </b> ${transactionId}
-        <br/>
-        <b>Transaction Number: </b> ${transactionNum}
-        <br/>
-    `;
-    
-        Email.send({
-            SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
-            To: 'sohorabdue@gmail.com',
-            From: "sohorabdue@gmail.com",
-            Subject: "Registration Form",
-            Body: ebody
-        }).then(
-            response => {
-                showPopup("Your message has been sent successfully!");
-            }
-        ).catch(
-            error => {
-                showPopup("Failed to send message. Please try again.");
-            }
-        );
+
+    if (selectedEvent === 'Wall Magazine') {
+        document.getElementById('t1').style.display = 'none';
+        document.getElementById('t5').style.display = 'none';
+        document.getElementById('t6').style.display = 'none';
+        document.getElementById('t8').style.display = 'none';
+        document.getElementById('t9').style.display = 'none';
+        document.getElementById('t10').style.display = 'none';
+        document.getElementById('t11').style.display = 'none';
+        document.getElementById('t12').style.display = 'none';
+        document.getElementById('t13').style.display = 'none';
+    } else if (selectedEvent === 'Project Display') {
+        document.getElementById('t2').style.display = 'none';
+        document.getElementById('t3').style.display = 'none';
+        document.getElementById('t4').style.display = 'none';
+        document.getElementById('t1').style.display = 'block';
+        document.getElementById('t5').style.display = 'block';
+        document.getElementById('t6').style.display = 'block';
+        document.getElementById('t8').style.display = 'block';
+        document.getElementById('t9').style.display = 'block';
+        document.getElementById('t10').style.display = 'block';
+        document.getElementById('t11').style.display = 'block';
+        document.getElementById('t12').style.display = 'block';
+        document.getElementById('t13').style.display = 'block';
+    } else if (selectedEvent === 'Robotics Olympiad' || selectedEvent === 'Soccer Robot') {
+        document.getElementById('t2').style.display = 'none';
+        document.getElementById('t3').style.display = 'none';
+        document.getElementById('t4').style.display = 'none';
+         document.getElementById('t1').style.display = 'block';
+        document.getElementById('t5').style.display = 'block';
+        document.getElementById('t6').style.display = 'block';
+        document.getElementById('t8').style.display = 'block';
+        document.getElementById('t9').style.display = 'block';
+        document.getElementById('t10').style.display = 'block';
+        document.getElementById('t11').style.display = 'block';
+        document.getElementById('t12').style.display = 'block';
+        document.getElementById('t13').style.display = 'block';
+    } else if (selectedEvent === 'Google It' || selectedEvent === 'Code Debbugging' || selectedEvent === 'Scrap Book') {
+        document.getElementById('t1').style.display = 'none';
+        document.getElementById('t5').style.display = 'none';
+        document.getElementById('t6').style.display = 'none';
+        document.getElementById('t8').style.display = 'none';
+        document.getElementById('t9').style.display = 'none';
+        document.getElementById('t10').style.display = 'none';
+        document.getElementById('t11').style.display = 'none';
+        document.getElementById('t12').style.display = 'none';
+        document.getElementById('t13').style.display = 'none';
     }
+
+ const ebody = `
+    <style>
+        /* Define keyframes */
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+            50% { text-shadow: 0 0 20px rgba(255,255,255,0.9); }
+            100% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <b style="animation: glowing 2s infinite;">Sign Us As: </b> ${signAs}
+    <br/>
+    <b style="animation: zoomIn 1s;">Event Type: </b> ${eventType}
+    <br/>
+    <b style="animation: slideIn 1s;">Team Leader: </b> ${teamLeader}
+    <br/>
+    <b style="animation: rotate 2s linear infinite;">Your Name: </b> ${memberName}
+    <br/>
+    <b style="animation: glowing 2s infinite;">Team Name: </b> ${teamName}
+    <br/>
+    <b style="animation: slideIn 1s;">Team Leader Email: </b> ${teamLeaderEmail}
+    <br/>
+    <b style="animation: zoomIn 1s;">Your Email Address: </b> ${teamLeaderEmail}
+    <br/>
+    <b style="animation: glowing 2s infinite;">Your Mobile Number: </b> ${transactionNum}
+    <br/>
+    <b style="animation: rotate 2s linear infinite;">Member 1 Name: </b> ${member1Name}
+    <br/>
+    <b style="animation: slideIn 1s;">Member 1 Email: </b> ${member1Email}
+    <br/>
+    <b style="animation: zoomIn 1s;">Member 2 Name: </b> ${member2Name}
+    <br/>
+    <b style="animation: glowing 2s infinite;">Member 2 Email: </b> ${member2Email}
+    <br/>
+    <b style="animation: rotate 2s linear infinite;">Member 3 Name: </b> ${member3Name}
+    <br/>
+    <b style="animation: slideIn 1s;">Member 3 Email: </b> ${member3Email}
+    <br/>
+    <b style="animation: glowing 2s infinite;">Transaction ID: </b> ${transactionId}
+    <br/>
+    <b style="animation: rotate 2s linear infinite;">Transaction Number: </b> ${transactionNum}
+    <b style="animation: rotate 2s linear infinite;">CA Reference: </b> ${CA}
+    <br/>
+`;
+
+
+    Email.send({
+        SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
+        To: 'sohorabdue@gmail.com',
+        From: "sohorabdue@gmail.com",
+        Subject: "Registration Form",
+        Body: ebody
+    }).then(
+        response => {
+            showPopup("Your message has been sent successfully!");
+        }
+    ).catch(
+        error => {
+            showPopup("Failed to send message. Please try again.");
+        }
+    );
+}
+
     
     function showPopup(message) {
         successPopup.textContent = message;
@@ -412,5 +523,63 @@ document.addEventListener('click', () => {
             window.location.href = 'registrationsuccess.html';
         }
 </SCRIPT>
+<script>
+    document.getElementById('eventType').addEventListener('change', function() {
+    var selectedEvent = this.value;
+
+    document.querySelectorAll('.form-item').forEach(function(item) {
+        item.style.display = 'block';
+    });
+
+    if (selectedEvent === 'Wall Magazine') {
+        document.getElementById('t1').style.display = 'none';
+        document.getElementById('t5').style.display = 'none';
+        document.getElementById('t6').style.display = 'none';
+        document.getElementById('t8').style.display = 'none';
+        document.getElementById('t9').style.display = 'none';
+        document.getElementById('t10').style.display = 'none';
+        document.getElementById('t11').style.display = 'none';
+        document.getElementById('t12').style.display = 'none';
+        document.getElementById('t13').style.display = 'none';
+    } else if (selectedEvent === 'Project Display') {
+        document.getElementById('t2').style.display = 'none';
+        document.getElementById('t3').style.display = 'none';
+        document.getElementById('t4').style.display = 'none';
+        document.getElementById('t1').style.display = 'block';
+        document.getElementById('t5').style.display = 'block';
+        document.getElementById('t6').style.display = 'block';
+        document.getElementById('t8').style.display = 'block';
+        document.getElementById('t9').style.display = 'block';
+        document.getElementById('t10').style.display = 'block';
+        document.getElementById('t11').style.display = 'block';
+        document.getElementById('t12').style.display = 'block';
+        document.getElementById('t13').style.display = 'block';
+    } else if (selectedEvent === 'Robotics Olympiad' || selectedEvent === 'Soccer Robot') {
+        document.getElementById('t2').style.display = 'none';
+        document.getElementById('t3').style.display = 'none';
+        document.getElementById('t4').style.display = 'none';
+         document.getElementById('t1').style.display = 'block';
+        document.getElementById('t5').style.display = 'block';
+        document.getElementById('t6').style.display = 'block';
+        document.getElementById('t8').style.display = 'block';
+        document.getElementById('t9').style.display = 'block';
+        document.getElementById('t10').style.display = 'block';
+        document.getElementById('t11').style.display = 'block';
+        document.getElementById('t12').style.display = 'block';
+        document.getElementById('t13').style.display = 'block';
+    } else if (selectedEvent === 'Google It' || selectedEvent === 'Code Debbugging' || selectedEvent === 'Scrap Book') {
+        document.getElementById('t1').style.display = 'none';
+        document.getElementById('t5').style.display = 'none';
+        document.getElementById('t6').style.display = 'none';
+        document.getElementById('t8').style.display = 'none';
+        document.getElementById('t9').style.display = 'none';
+        document.getElementById('t10').style.display = 'none';
+        document.getElementById('t11').style.display = 'none';
+        document.getElementById('t12').style.display = 'none';
+        document.getElementById('t13').style.display = 'none';
+    }
+});
+
+</script>
 </body>
 </html>
