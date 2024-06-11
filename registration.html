@@ -341,7 +341,7 @@
         });
     }
     
-    function sendEmail(event) {
+ function sendAndHandleEmail(event) {
     event.preventDefault();
 
     const signAs = document.getElementById('signAs').value;
@@ -417,7 +417,6 @@
         }
     );
 }
-
     
     function showPopup(message) {
         successPopup.textContent = message;
