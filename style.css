@@ -908,7 +908,7 @@ background-repeat: no-repeat;
     justify-content: space-between;
     background-color: #141622;
     padding: 40px 30px;
-    border-radius: 20px;
+   
     margin-bottom: 100px;
 }
 
@@ -926,7 +926,7 @@ background-repeat: no-repeat;
   color: white;
 }
 #part a:hover{
-    box-shadow: 0 0 25px rgb(255, 79, 182);
+    box-shadow: 0 0 25px rgb(0,0,0.081);
 }
 #texture1{
     display: flex;
@@ -944,14 +944,13 @@ background-repeat: no-repeat;
     padding: 20px;
     border-radius: 20px;
     max-width: 600px;
-    box-shadow:0 0 25px black,
-    0 0 50px black;
+    box-shadow:0 0 25px rgba(0,0,0,0.081);
 }
 #bord{
     max-width: 560px;
     height: 40vh;
     border: 1px solid pink;
-    border-radius: 20px;
+   
 }
 #event-txt1 h2{
     font-size: 22px;
