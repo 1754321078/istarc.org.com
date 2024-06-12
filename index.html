@@ -81,41 +81,25 @@
     </div>
     </section>
 
-    <section id="Home">
-        <video autoplay loop muted id="background-video">
-            <source src="img/video-particles.mp4" type="video/mp4">
-        </video>
-        <div id="info">
-            <div id="welcome">
-                <p>Welcome To</p> 
-            </div>
-            <div id="ISTARC">
-                <div id="vert"> 
-                    <div id="vertical-img">
-                        <a>Total Participants</a>
-                        <h3 id="total">100'</h3>
-                    </div>
-                    <p>12<SUP>th</SUP> ISTARC SCIENCE AND TECHNOLOGY<BR> FESTIVAL - 2024</p>
-                </div>
-            </div>
-            <div id="p">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae aliquam distinctio alias odio eaque eveniet placeat quasi, tempore magni explicabo temporibus quo nisi nostrum voluptatum veritatis eum pariatur esse!</p>
-            </div>
-            <div id="btn">
-                <div id="Participate" onclick="audio.play()" >
-                    <a href="registration.html">Register Now</a>
-                </div>
-                <div id="button"onclick="audio.play()">
-                    <a href="event.html">Explore More</a>
-                </div>
-            </div>
-            <div id="p-1">
-               
-            </div>
-           
-
-    </section>
+       </section>
+    <script>
+      
+        document.addEventListener('DOMContentLoaded', function() {
+            let totalElement = document.getElementById('total');
+            let count = 0;
+            let target = 100;
+            let duration = 3000;
+            let interval = duration / target;
     
+            let counter = setInterval(function() {
+                count += 1;
+                totalElement.textContent = count;
+                if(count === target) {
+                    clearInterval(counter);
+                }
+            }, interval);
+        });
+    </script>
 
     <section id="intro">
         <div id="border">
@@ -132,6 +116,88 @@
         </div>
        
     </section>
+
+
+
+
+
+
+    
+<section id="eventbar">
+<div id="head">
+    <h2>Events</h2>
+</div>
+<div id="eventtype">
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+<div id="eventpart">
+    <h3>Wall Magazine</h3>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elitLorem Ipsum Dolor Sit Amet Consectetur Adipisicig elit</p>
+    <li>
+        <a href="">Learn more.</a>
+    </li>
+</div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
 
     <section id="faq">
         <div id="faq-border">
@@ -217,7 +283,11 @@
       <div class="copyright">
           <p>© 2024, ISTARC Created by Sohorab Mahmud Fahim.<a href="https://www.facebook.com/fahimlwebdeveloper" style="font-weight:600;">Hire Now.</a></p>
       </div>
-      
+
+</footer>
+
+
+
       <script>
         window.addEventListener('load', function() {
         const preloader = document.getElementById('preloader');
