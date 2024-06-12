@@ -986,12 +986,14 @@ background-repeat: no-repeat;
 
 }
 
-#event-part{
-    display: flex;
+#event-part {
+    display: grid;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-bottom: 100px;
+    grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 #sponsors{
