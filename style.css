@@ -902,14 +902,16 @@ background-repeat: no-repeat;
     padding: 50px 16px 30px 16px;
    
 }
-#texture{
-    display: flex;
+#texture {
+    display: grid;
     align-items: center;
-    justify-content: space-between;
     background-color: #141622;
     padding: 40px 30px;
-   
+    /* border-radius: 20px; */
     margin-bottom: 100px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    justify-items: end;
 }
 
 #texture h3{
