@@ -304,83 +304,88 @@ const bar = document.getElementById('bar');
         });
     }
      
-        function sendEmail(event) {
-            event.preventDefault();
-            
-            const signAs = document.getElementById('signAs').value;
-            const eventType = document.getElementById('eventType').value;
-            const teamLeader = document.getElementById("teamLeader").value;
-            const memberName = document.getElementById("Member-name").value;
-            const teamName = document.getElementById("teamName").value;
-            const teamLeaderEmail = document.getElementById("teamLeaderEmail").value;
-            const member1Name = document.getElementById("member1Name").value;
-            const member1Email = document.getElementById("member1Email").value;
-            const member2Name = document.getElementById("member2Name").value;
-            const member2Email = document.getElementById("member2Email").value;
-            const member3Name = document.getElementById("member3Name").value;
-            const member3Email = document.getElementById("member3Email").value;
-            const transactionId = document.getElementById("transactionId").value;
-            const transactionNum = document.getElementById("transactionNum").value;
-            const ca = document.getElementById("ca").value;
-            
-            const ebody = `
-                <b>Sign Us As: </b> ${signAs}
-                <br/>
-                <b>Event Type: </b> ${eventType}
-                <br/>
-                <b>Team Leader: </b> ${teamLeader}
-                <br/>
-                <b>Your Name: </b> ${memberName}
-                <br/>
-                <b>Team Name: </b> ${teamName}
-                <br/>
-                <b>Team Leader Email: </b> ${teamLeaderEmail}
-                <br/>
-                <b>Member 1 Name: </b> ${member1Name}
-                <br/>
-                <b>Member 1 Email: </b> ${member1Email}
-                <br/>
-                <b>Member 2 Name: </b> ${member2Name}
-                <br/>
-                <b>Member 2 Email: </b> ${member2Email}
-                <br/>
-                <b>Member 3 Name: </b> ${member3Name}
-                <br/>
-                <b>Member 3 Email: </b> ${member3Email}
-                <br/>
-                <b>Transaction ID: </b> ${transactionId}
-                <br/>
-                <b>Transaction Number: </b> ${transactionNum}
-                <br/>
-                <b>CA Reference: </b> ${ca}
-                <br/>
-            `;
+        let totalParticipants = 0;
 
-            Email.send({
-                SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
-                To: 'sohorabdue@gmail.com',
-                From: "sohorabdue@gmail.com",
-                Subject: "New Message from Registration Form",
-                Body: ebody
-            }).then(
-                response => {
-                    showPopup("Your message has been sent successfully!");
-                }
-            ).catch(
-                error => {
-                    showPopup("Failed to send message. Please try again.");
-                }
-            );
-        }
+function sendEmail(event) {
+    event.preventDefault();
 
-        function showPopup(message) {
-            const successPopup = document.getElementById('successPopup');
-            successPopup.textContent = message;
-            successPopup.style.display = "block";
-            setTimeout(() => {
-                successPopup.style.display = "none";
-            }, 5000);
+    const signAs = document.getElementById('signAs').value;
+    const eventType = document.getElementById('eventType').value;
+    const teamLeader = document.getElementById("teamLeader").value;
+    const memberName = document.getElementById("Member-name").value;
+    const teamName = document.getElementById("teamName").value;
+    const teamLeaderEmail = document.getElementById("teamLeaderEmail").value;
+    const member1Name = document.getElementById("member1Name").value;
+    const member1Email = document.getElementById("member1Email").value;
+    const member2Name = document.getElementById("member2Name").value;
+    const member2Email = document.getElementById("member2Email").value;
+    const member3Name = document.getElementById("member3Name").value;
+    const member3Email = document.getElementById("member3Email").value;
+    const transactionId = document.getElementById("transactionId").value;
+    const transactionNum = document.getElementById("transactionNum").value;
+    const ca = document.getElementById("ca").value;
+
+    const ebody = `
+        <b>Sign Us As: </b> ${signAs}<br/>
+        <b>Event Type: </b> ${eventType}<br/>
+        <b>Team Leader: </b> ${teamLeader}<br/>
+        <b>Your Name: </b> ${memberName}<br/>
+        <b>Team Name: </b> ${teamName}<br/>
+        <b>Team Leader Email: </b> ${teamLeaderEmail}<br/>
+        <b>Member 1 Name: </b> ${member1Name}<br/>
+        <b>Member 1 Email: </b> ${member1Email}<br/>
+        <b>Member 2 Name: </b> ${member2Name}<br/>
+        <b>Member 2 Email: </b> ${member2Email}<br/>
+        <b>Member 3 Name: </b> ${member3Name}<br/>
+        <b>Member 3 Email: </b> ${member3Email}<br/>
+        <b>Transaction ID: </b> ${transactionId}<br/>
+        <b>Transaction Number: </b> ${transactionNum}<br/>
+        <b>CA Reference: </b> ${ca}<br/>
+    `;
+
+    Email.send({
+        SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
+        To: 'sohorabdue@gmail.com',
+        From: "sohorabdue@gmail.com",
+        Subject: "New Message from Registration Form",
+        Body: ebody
+    }).then(
+        response => {
+            totalParticipants++;
+            updateParticipantCount();
+            showPopup("Your message has been sent successfully!");
         }
+    ).catch(
+        error => {
+            showPopup("Failed to send message. Please try again.");
+        }
+    );
+}
+
+function updateParticipantCount() {
+    const totalParticipantsElement = document.getElementById('totalParticipants');
+    if (totalParticipantsElement) {
+        totalParticipantsElement.textContent = totalParticipants;
+    }
+}
+
+function showPopup(message) {
+    const successPopup = document.getElementById('successPopup');
+    successPopup.textContent = message;
+    successPopup.style.display = "block";
+    setTimeout(() => {
+        successPopup.style.display = "none";
+    }, 5000);
+}
+
+const form = document.querySelector('.participation-form');
+if (form) {
+    form.addEventListener('submit', sendEmail);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateParticipantCount();
+});
     </script>
 <script src="script.js"></script>
 </body>
