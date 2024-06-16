@@ -304,7 +304,7 @@ const bar = document.getElementById('bar');
         });
     }
      
-        let totalParticipants = 0;
+let totalParticipants = 0;
 
 function sendEmail(event) {
     event.preventDefault();
@@ -363,7 +363,7 @@ function sendEmail(event) {
 }
 
 function updateParticipantCount() {
-    const totalParticipantsElement = document.getElementById('totalParticipants');
+    const totalParticipantsElement = document.getElementById('total');
     if (totalParticipantsElement) {
         totalParticipantsElement.textContent = totalParticipants;
     }
