@@ -103,24 +103,7 @@
            
 
     </section>
-    <script>
-      
-        document.addEventListener('DOMContentLoaded', function() {
-            let totalElement = document.getElementById('total');
-            let count = 0;
-            let target = 100;
-            let duration = 3000;
-            let interval = duration / target;
-    
-            let counter = setInterval(function() {
-                count += 1;
-                totalElement.textContent = count;
-                if(count === target) {
-                    clearInterval(counter);
-                }
-            }, interval);
-        });
-    </script>
+   
 
     <section id="intro">
         <div id="border">
