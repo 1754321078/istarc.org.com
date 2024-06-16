@@ -1,4 +1,4 @@
-istration<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@ istration<!DOCTYPE html>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
     <style>
@@ -75,141 +76,132 @@ istration<!DOCTYPE html>
     </div> 
     </section>
 
-
     <section id="home-about">
         <div id="info-txt">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sint rerum dolorum eveniet quasi exercitationem hic provident delectus sapiente sed modi debitis obcaecati eligendi distinctio, quibusdam, dolor et repellendus officia?</p>
         </div>
         </section>
         
-
-
-
-
-        <section id="registration">
-            <div class="title">
-                <p>Registration</p>
+         <section id="registration">
+        <div class="title">
+            <p>Registration</p>
+        </div>
+        <div class="container">
+            <div class="header">
+                <ul class="instructions">
+                    <li><a href="#" target="_blank" class="link" style="font-size: bold;">Welcome To Our Event</a></li>
+                    <li><a href="#" target="_blank" class="link" style="font-size: bold;">Read All of our privacy's and policies</a></li>
+                    <li><a href="#" target="_blank" class="link" style="font-size: bold;">Register now and be scammed</a></li>
+                    <li><a href="#" target="_blank" class="link" style="font-size: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nemo ipsa, temporibus illum magni laboriosam ex voluptatibus voluptatum tenetur! Provident laborum quod iure voluptatum est ipsam modi ratione obcaecati fugiat.</a></li>
+                </ul>
             </div>
-            <div class="container">
-                <div class="header">
-                    <ul class="instructions">
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Welcome To Our Event</a></li>
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Read All of our privacy's and policies</a></li>
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Register now and be scamed</a></li>
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nemo ipsa, temporibus illum magni laboriosam ex voluptatibus voluptatum tenetur! Provident laborum quod iure voluptatum est ipsam modi ratione obcaecati fugiat.</a></li>
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Welcome To Our Event</a></li>
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Read All of our privacy's and policies</a></li>
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Register now and be scamed</a></li>
-                        <li><a href="#" target="_blank" class="link" style="font-size: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nemo ipsa, temporibus illum magni laboriosam ex voluptatibus voluptatum tenetur! Provident laborum quod iure voluptatum est ipsam modi ratione obcaecati fugiat.</a></li>
-                    </ul>
+            <div class="form-container">
+                <div id="form-reg">
+                    <div id="sign">
+                        <h3>Sign Us As : 
+                            <select id="signAs">
+                                <option value="Participant">Participant</option>
+                                <option value="Campus Ambassador">Campus Ambassador</option>
+                            </select>
+                        </h3>
+                    </div>
+                    <div id="event">
+                        <h3>Event : 
+                            <select id="eventType">
+                                <option value="Wall Magazine">Wall Magazine</option>
+                                <option value="Project Display">Project Display</option>
+                            </select>
+                        </h3>
+                    </div>
                 </div>
-                <div class="form-container">
-                    <div id="form-reg">
-                        <div id="sign">
-                            <h3>Sign Us As : 
-                                <select id="signAs">
-                                    <option value="Participant">Participant</option>
-                                    <option value="Campus Ambassador">Campus Ambassador</option>
-                                </select>
-                            </h3>
+                <form class="participation-form" onsubmit="sendEmail(event)">
+                    <div class="form-group">
+                        <div class="form-item">
+                            <label for="teamLeader">Team leader *</label>
+                            <input type="text" id="teamLeader" placeholder="Enter team leader's full name" required>
                         </div>
-                        <div id="event">
-                            <h3>Event : 
-                                <select id="eventType">
-                                    <option value="Wall Magazine">Wall Magazine</option>
-                                    <option value="Project Display">Project Display</option>
-                                </select>
-                            </h3>
+                        <div class="form-item">
+                            <label for="Member-name">Your Name *</label>
+                            <input type="text" id="Member-name" placeholder="Enter your name" required>
                         </div>
                     </div>
-                    <form class="participation-form" onsubmit="sendEmail(event)" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
+                    <div class="form-group">
+                        <div class="form-item">
+                            <label for="teamName">Team name *</label>
+                            <input type="text" id="teamName" placeholder="Enter team name" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="teamLeaderEmail">Team leader (email address) *</label>
+                            <input type="email" id="teamLeaderEmail" placeholder="Enter team leader's email address" required>
+                        </div>
+                    </div>
+                    <div class="members-group">
+                        <div class="member">
                             <div class="form-item">
-                                <label for="teamLeader">Team leader *</label>
-                                <input type="text" id="teamLeader" placeholder="Enter team leader's full name" required>
+                                <label for="member1Name">Member 1 (full name)</label>
+                                <input type="text" id="member1Name" placeholder="Enter member 1's full name">
                             </div>
                             <div class="form-item">
-                                <label for="Member-name">Your Name *</label>
-                                <input type="text" id="Member-name" placeholder="Enter your name" required>
+                                <label for="member1Email">Member 1 (email address)</label>
+                                <input type="email" id="member1Email" placeholder="Enter member 1's email address">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="member">
                             <div class="form-item">
-                                <label for="teamName">Team name *</label>
-                                <input type="text" id="teamName" placeholder="Enter team name" required>
+                                <label for="member2Name">Member 2 (full name)</label>
+                                <input type="text" id="member2Name" placeholder="Enter member 2's full name">
                             </div>
                             <div class="form-item">
-                                <label for="teamLeaderEmail">Team leader (email address) *</label>
-                                <input type="email" id="teamLeaderEmail" placeholder="Enter team leader's email address" required>
+                                <label for="member2Email">Member 2 (email address)</label>
+                                <input type="email" id="member2Email" placeholder="Enter member 2's email address">
                             </div>
                         </div>
-                        <div class="members-group">
-                            <div class="member">
-                                <div class="form-item">
-                                    <label for="member1Name">Member 1 (full name)</label>
-                                    <input type="text" id="member1Name" placeholder="Enter member 1's full name" required>
-                                </div>
-                                <div class="form-item">
-                                    <label for="member1Email">Member 1 (email address)</label>
-                                    <input type="email" id="member1Email" placeholder="Enter member 1's email address" required>
-                                </div>
-                            </div>
-                            <div class="member">
-                                <div class="form-item">
-                                    <label for="member2Name">Member 2 (full name)</label>
-                                    <input type="text" id="member2Name" placeholder="Enter member 2's full name" required>
-                                </div>
-                                <div class="form-item">
-                                    <label for="member2Email">Member 2 (email address)</label>
-                                    <input type="email" id="member2Email" placeholder="Enter member 2's email address" required>
-                                </div>
-                            </div>
-                            <div class="member">
-                                <div class="form-item">
-                                    <label for="member3Name">Member 3 (full name)</label>
-                                    <input type="text" id="member3Name" placeholder="Enter member 3's full name" required>
-                                </div>
-                                <div class="form-item">
-                                    <label for="member3Email">Member 3 (email address)</label>
-                                    <input type="email" id="member3Email" placeholder="Enter member 3's email address" required>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="payment-instructions">
-                            <li>Hello World <strong>Money</strong> To  <strong>+8801624063328</strong></li>
-                            <li><strong>Your money will not be refunded if you are absent.</strong></li>
-                        </ul>
-                        <div class="form-group">
+                        <div class="member">
                             <div class="form-item">
-                                <label for="transactionId">Transaction ID *</label>
-                                <input type="text" id="transactionId" placeholder="Enter transaction ID" required>
+                                <label for="member3Name">Member 3 (full name)</label>
+                                <input type="text" id="member3Name" placeholder="Enter member 3's full name">
                             </div>
                             <div class="form-item">
-                                <label for="transactionNum">Number *</label>
-                                <input type="text" id="transactionNum" placeholder="Enter number" required>
-                                <p class="note"></p>
+                                <label for="member3Email">Member 3 (email address)</label>
+                                <input type="email" id="member3Email" placeholder="Enter member 3's email address">
                             </div>
-                            
                         </div>
-                        <div class="form-group">
-                            <div class="form-item">
-                                <label for="ca">CA Reference *</label>
-                                <input type="text" id="ca" placeholder="CA reference ( Optional )" required>
-                            </div></div>
-                        <div class="agreement">
-                            <label>
-                                <input type="checkbox" required> 
-                                <a href="#" target="_blank" class="link">&nbsp;Accept Our Privacy And Policy</a>
-                            </label>
+                    </div>
+                    <ul class="payment-instructions">
+                        <li>Hello World <strong>Money</strong> To  <strong>+8801624063328</strong></li>
+                        <li><strong>Your money will not be refunded if you are absent.</strong></li>
+                    </ul>
+                    <div class="form-group">
+                        <div class="form-item">
+                            <label for="transactionId">Transaction ID *</label>
+                            <input type="text" id="transactionId" placeholder="Enter transaction ID" required>
                         </div>
-                         <div class="inputBox">
-                                <input type="submit" value="Send" class="submit-con">
-                            </div>
-
-                    </form>
-                </div>
-            </div>  
-        </section>
+                        <div class="form-item">
+                            <label for="transactionNum">Number *</label>
+                            <input type="text" id="transactionNum" placeholder="Enter number" required>
+                            <p class="note"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-item">
+                            <label for="ca">CA Reference</label>
+                            <input type="text" id="ca" placeholder="CA reference (Optional)">
+                        </div>
+                    </div>
+                    <div class="agreement">
+                        <label>
+                            <input type="checkbox" required> 
+                            <a href="#" target="_blank" class="link">&nbsp;Accept Our Privacy And Policy</a>
+                        </label>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Send" class="submit-con">
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </section>
+   <div id="successPopup" class="popup"></div>
 <section id="faq">
     <div id="faq-border">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, minus odio. Mollitia blanditiis, praesentium natus voluptate modi soluta consequuntur, ipsam quas necessitatibus corrupti reiciendis suscipit sit dicta? Unde, quos exercitationem.</p><br>
@@ -292,187 +284,103 @@ istration<!DOCTYPE html>
 </footer>
 
 
-<style>
-#success-popup {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 10000;
-}
-</style>
 
-<div id="success-popup">Your message has been sent successfully!</div>
-<SCRIPT>
- function handleSubmit(event) {
+ <script>
+        function sendEmail(event) {
             event.preventDefault();
-            window.location.href = 'contact.html';
-        }
-</SCRIPT>
-<script>
-const bar = document.getElementById('bar');
-const close = document.getElementById('close');
-const nav = document.getElementById('navbar');
-const successPopup = document.getElementById('success-popup');
+            
+            const signAs = document.getElementById('signAs').value;
+            const eventType = document.getElementById('eventType').value;
+            const teamLeader = document.getElementById("teamLeader").value;
+            const memberName = document.getElementById("Member-name").value;
+            const teamName = document.getElementById("teamName").value;
+            const teamLeaderEmail = document.getElementById("teamLeaderEmail").value;
+            const member1Name = document.getElementById("member1Name").value;
+            const member1Email = document.getElementById("member1Email").value;
+            const member2Name = document.getElementById("member2Name").value;
+            const member2Email = document.getElementById("member2Email").value;
+            const member3Name = document.getElementById("member3Name").value;
+            const member3Email = document.getElementById("member3Email").value;
+            const transactionId = document.getElementById("transactionId").value;
+            const transactionNum = document.getElementById("transactionNum").value;
+            const ca = document.getElementById("ca").value;
+            
+            const ebody = `
+                <b>Sign Us As: </b> ${signAs}
+                <br/>
+                <b>Event Type: </b> ${eventType}
+                <br/>
+                <b>Team Leader: </b> ${teamLeader}
+                <br/>
+                <b>Your Name: </b> ${memberName}
+                <br/>
+                <b>Team Name: </b> ${teamName}
+                <br/>
+                <b>Team Leader Email: </b> ${teamLeaderEmail}
+                <br/>
+                <b>Member 1 Name: </b> ${member1Name}
+                <br/>
+                <b>Member 1 Email: </b> ${member1Email}
+                <br/>
+                <b>Member 2 Name: </b> ${member2Name}
+                <br/>
+                <b>Member 2 Email: </b> ${member2Email}
+                <br/>
+                <b>Member 3 Name: </b> ${member3Name}
+                <br/>
+                <b>Member 3 Email: </b> ${member3Email}
+                <br/>
+                <b>Transaction ID: </b> ${transactionId}
+                <br/>
+                <b>Transaction Number: </b> ${transactionNum}
+                <br/>
+                <b>CA Reference: </b> ${ca}
+                <br/>
+            `;
 
-if (bar) {
-    bar.addEventListener('click', () => {
-        nav.classList.add('active');
-        nav.style.zIndex = '1000';
-    });
-}
-
-if (close) {
-    close.addEventListener('click', () => {
-        nav.classList.remove('active');
-        nav.style.zIndex = 'initial'; 
-    });
-}
-
-function sendEmail(event) {
-    event.preventDefault();
-    
-   const signAs = document.getElementById('signAs').value;
-    const eventType = document.getElementById('eventType').value;
-    const teamLeader = document.getElementById("teamLeader").value;
-    const memberName = document.getElementById("Member-name").value;
-    const teamName = document.getElementById("teamName").value;
-    const teamLeaderEmail = document.getElementById("teamLeaderEmail").value;
-    const member1Name = document.getElementById("member1Name").value;
-    const member1Email = document.getElementById("member1Email").value;
-    const member2Name = document.getElementById("member2Name").value;
-    const member2Email = document.getElementById("member2Email").value;
-    const member3Name = document.getElementById("member3Name").value;
-    const member3Email = document.getElementById("member3Email").value;
-    const transactionId = document.getElementById("transactionId").value;
-    const transactionNum = document.getElementById("transactionNum").value;
-    const ca = document.getElementById("ca").value;
-    
-    const ebody = `
-        <b>Sign Us As: </b> ${signAs}
-        <br/>
-        <b>Event Type: </b> ${eventType}
-        <br/>
-        <b>Team Leader: </b> ${teamLeader}
-        <br/>
-        <b>Your Name: </b> ${memberName}
-        <br/>
-        <b>Team Name: </b> ${teamName}
-        <br/>
-        <b>Team Leader Email: </b> ${teamLeaderEmail}
-        <br/>
-        <b>Member 1 Name: </b> ${member1Name}
-        <br/>
-        <b>Member 1 Email: </b> ${member1Email}
-        <br/>
-        <b>Member 2 Name: </b> ${member2Name}
-        <br/>
-        <b>Member 2 Email: </b> ${member2Email}
-        <br/>
-        <b>Member 3 Name: </b> ${member3Name}
-        <br/>
-        <b>Member 3 Email: </b> ${member3Email}
-        <br/>
-        <b>Transaction ID: </b> ${transactionId}
-        <br/>
-        <b>Transaction Number: </b> ${transactionNum}
-        <br/>
-        <b>CA Reference: </b> ${ca}
-        <br/>
-    `;
-
-    Email.send({
-        SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
-        To: 'sohorabdue@gmail.com',
-        From: "sohorabdue@gmail.com",
-        Subject: "New Message from Registration Form",
-        Body: ebody
-    }).then(
-        response => {
-            showPopup("Your message has been sent successfully!");
-        }
-    ).catch(
-        error => {
-            showPopup("Failed to send message. Please try again.");
-        }
-    );
-}
-
-function showPopup(message) {
-    successPopup.textContent = message;
-    successPopup.style.display = "block";
-    setTimeout(() => {
-        successPopup.style.display = "none";
-    }, 5000);
-}
-</script>
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-AOS.init();
-AOS.init({offset: 300});
-AOS.init({delay: 20});
-</script>
-<script>
-    const cursor = document.querySelector('.cursor');
-
-document.addEventListener('mousemove', e => {
-cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
-})
-
-document.addEventListener('click', () => {
-cursor.classList.add("expand");
-
-setTimeout(() => {
-cursor.classList.remove("expand");
-}, 500)
-})
-</script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
-    const submitButton = document.querySelector('.submit-button');
-
-    function checkFormFields() {
-        let allFilled = true;
-        formInputs.forEach(input => {
-            if (input.type === 'checkbox') {
-                if (!input.checked) {
-                    allFilled = false;
+            Email.send({
+                SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
+                To: 'sohorabdue@gmail.com',
+                From: "sohorabdue@gmail.com",
+                Subject: "New Message from Registration Form",
+                Body: ebody
+            }).then(
+                response => {
+                    showPopup("Your message has been sent successfully!");
                 }
-            } else if (!input.value) {
-                allFilled = false;
-            }
-        });
-        return allFilled;
-    }
-
-    function updateSubmitButton() {
-        if (checkFormFields()) {
-            submitButton.disabled = false;
-            submitButton.style.cursor = "pointer";
-        } else {
-            submitButton.disabled = true;
-            submitButton.style.cursor = "not-allowed";
+            ).catch(
+                error => {
+                    showPopup("Failed to send message. Please try again.");
+                }
+            );
         }
-    }
 
-    formInputs.forEach(input => {
-        input.addEventListener('input', updateSubmitButton);
-        if (input.type === 'checkbox') {
-            input.addEventListener('change', updateSubmitButton);
+        function showPopup(message) {
+            const successPopup = document.getElementById('successPopup');
+            successPopup.textContent = message;
+            successPopup.style.display = "block";
+            setTimeout(() => {
+                successPopup.style.display = "none";
+            }, 5000);
         }
-    });
-
-    updateSubmitButton();
-});
-</script>
+    </script>
 <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
