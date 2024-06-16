@@ -12,18 +12,17 @@
 </head>
 <body>
     <style>
-#success-popup {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 10000;
-}
+  .popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
 </style>
     <div class="cursor"></div>
     <section id="Home-Nav">
@@ -286,6 +285,25 @@
 
 
  <script>
+const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+    const successPopup = document.getElementById('success-popup');
+    
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active');
+            nav.style.zIndex = '1000';
+        });
+    }
+    
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active');
+            nav.style.zIndex = 'initial'; 
+        });
+    }
+     
         function sendEmail(event) {
             event.preventDefault();
             
