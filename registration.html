@@ -10,7 +10,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
 </head>
 <body>
-    
+    <style>
+#success-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+</style>
     <div class="cursor"></div>
     <section id="Home-Nav">
         <div id="header">
@@ -176,30 +189,27 @@
                                 <input type="text" id="transactionNum" placeholder="Enter number" required>
                                 <p class="note"></p>
                             </div>
+                            
+                        </div>
+                        <div class="form-group">
                             <div class="form-item">
                                 <label for="ca">CA Reference *</label>
                                 <input type="text" id="ca" placeholder="CA reference ( Optional )" required>
-                            </div>
-                        </div>
+                            </div></div>
                         <div class="agreement">
                             <label>
                                 <input type="checkbox" required> 
                                 <a href="#" target="_blank" class="link">&nbsp;Accept Our Privacy And Policy</a>
                             </label>
                         </div>
-                        <input type="submit" value="Send" class="submit-button">
+                         <div class="inputBox">
+                                <input type="submit" value="Send" class="submit-con">
+                            </div>
 
                     </form>
                 </div>
             </div>  
         </section>
-        
-
-
-
-
-
-
 <section id="faq">
     <div id="faq-border">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, minus odio. Mollitia blanditiis, praesentium natus voluptate modi soluta consequuntur, ipsam quas necessitatibus corrupti reiciendis suscipit sit dicta? Unde, quos exercitationem.</p><br>
@@ -208,11 +218,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-
 <section id="sponsor">
     <h1>Meet Our Sponsors</h1>
 <div id="cent-wrapper">
@@ -279,12 +284,14 @@
         <a href="">Track My Order</a>
         <a href="">Help</a>
     </div>
-    <div class="copyright">
+  
+
+ <div class="copyright">
         <p>© 2024, ISTARC Created by Sohorab Mahmud Fahim.<a href="https://www.facebook.com/fahimlwebdeveloper" style="font-weight:600;">Hire Now.</a></p>
     </div>
 </footer>
 
-<div id="success-popup">Your message has been sent successfully!</div>
+
 <style>
 #success-popup {
     display: none;
@@ -299,30 +306,38 @@
     z-index: 10000;
 }
 </style>
+
+<div id="success-popup">Your message has been sent successfully!</div>
+<SCRIPT>
+ function handleSubmit(event) {
+            event.preventDefault();
+            window.location.href = 'contact.html';
+        }
+</SCRIPT>
 <script>
-    const bar = document.getElementById('bar');
-    const close = document.getElementById('close');
-    const nav = document.getElementById('navbar');
-    const successPopup = document.getElementById('success-popup');
+const bar = document.getElementById('bar');
+const close = document.getElementById('close');
+const nav = document.getElementById('navbar');
+const successPopup = document.getElementById('success-popup');
+
+if (bar) {
+    bar.addEventListener('click', () => {
+        nav.classList.add('active');
+        nav.style.zIndex = '1000';
+    });
+}
+
+if (close) {
+    close.addEventListener('click', () => {
+        nav.classList.remove('active');
+        nav.style.zIndex = 'initial'; 
+    });
+}
+
+function sendEmail(event) {
+    event.preventDefault();
     
-    if (bar) {
-        bar.addEventListener('click', () => {
-            nav.classList.add('active');
-            nav.style.zIndex = '1000';
-        });
-    }
-    
-    if (close) {
-        close.addEventListener('click', () => {
-            nav.classList.remove('active');
-            nav.style.zIndex = 'initial'; 
-        });
-    }
-    
-    function sendEmail(event) {
-        event.preventDefault();
-    
-        const signAs = document.getElementById('signAs').value;
+   const signAs = document.getElementById('signAs').value;
     const eventType = document.getElementById('eventType').value;
     const teamLeader = document.getElementById("teamLeader").value;
     const memberName = document.getElementById("Member-name").value;
@@ -340,87 +355,86 @@
     
     const ebody = `
         <b>Sign Us As: </b> ${signAs}
-        <br/> <b>Event Type: </b> ${eventType} 
-        <br/> <b>Team Leader: </b> ${teamLeader}
-        <br/> <b>Your Name: </b> ${memberName} <br/>
-        <b>Team Name: </b> ${teamName} <br/> 
+        <br/>
+        <b>Event Type: </b> ${eventType}
+        <br/>
+        <b>Team Leader: </b> ${teamLeader}
+        <br/>
+        <b>Your Name: </b> ${memberName}
+        <br/>
+        <b>Team Name: </b> ${teamName}
+        <br/>
         <b>Team Leader Email: </b> ${teamLeaderEmail}
-        <br/> <b>Member 1 Name: </b> ${member1Name}
-        <br/> <b>Member 1 Email: </b> ${member1Email}
-        <br/> <b>Member 2 Name: </b> ${member2Name}
-        <br/> <b>Member 2 Email: </b> ${member2Email} 
-        <br/> <b>Member 3 Name: </b> ${member3Name}
-        <br/> <b>Member 3 Email: </b> ${member3Email}
-        <br/> <b>Transaction ID: </b> ${transactionId}
-        <br/> <b>Transaction Number: </b> ${transactionNum}
-        <br/> <b>CA Reference: </b> ${ca} <br/>
+        <br/>
+        <b>Member 1 Name: </b> ${member1Name}
+        <br/>
+        <b>Member 1 Email: </b> ${member1Email}
+        <br/>
+        <b>Member 2 Name: </b> ${member2Name}
+        <br/>
+        <b>Member 2 Email: </b> ${member2Email}
+        <br/>
+        <b>Member 3 Name: </b> ${member3Name}
+        <br/>
+        <b>Member 3 Email: </b> ${member3Email}
+        <br/>
+        <b>Transaction ID: </b> ${transactionId}
+        <br/>
+        <b>Transaction Number: </b> ${transactionNum}
+        <br/>
+        <b>CA Reference: </b> ${ca}
+        <br/>
     `;
-    
-        Email.send({
-            SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
-            To: 'sohorabdue@gmail.com',
-            From: "sohorabdue@gmail.com",
-            Subject: "New Message from Registration Form",
-            Body: ebody
-        }).then(
-            response => {
-                showPopup("Your message has been sent successfully!");
-            }
-        ).catch(
-            error => {
-                showPopup("Failed to send message. Please try again.");
-            }
-        );
-    }
-    
-    function showPopup(message) {
-        successPopup.textContent = message;
-        successPopup.style.display = "block";
-        setTimeout(() => {
-            successPopup.style.display = "none";
-        }, 5000);
-    }
-    </script>
-    
-    
-    <script src="https://smtpjs.com/v3/smtp.js">
-</script>
-<SCRIPT>
-const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
-const submitButton = document.querySelector('.submit-button');
 
-function checkFormFields() {
-    let allFilled = true;
-    formInputs.forEach(input => {
-        if (!input.value || (input.type === 'checkbox' && !input.checked)) {
-            allFilled = false;
+    Email.send({
+        SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
+        To: 'sohorabdue@gmail.com',
+        From: "sohorabdue@gmail.com",
+        Subject: "New Message from Contact Form",
+        Body: ebody
+    }).then(
+        response => {
+            showPopup("Your message has been sent successfully!");
         }
-    });
-    return allFilled;
+    ).catch(
+        error => {
+            showPopup("Failed to send message. Please try again.");
+        }
+    );
 }
 
-function updateSubmitButton() {
-    if (checkFormFields()) {
-        submitButton.disabled = false;
-        submitButton.style.cursor = "pointer";
-    } else {
-        submitButton.disabled = true;
-        submitButton.style.cursor = "not-allowed";
-    }
+function showPopup(message) {
+    successPopup.textContent = message;
+    successPopup.style.display = "block";
+    setTimeout(() => {
+        successPopup.style.display = "none";
+    }, 5000);
 }
+</script>
 
-formInputs.forEach(input => {
-    input.addEventListener('input', updateSubmitButton);
-});
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+AOS.init({offset: 300});
+AOS.init({delay: 20});
+</script>
+<script>
+    const cursor = document.querySelector('.cursor');
 
-submitButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    if (!submitButton.disabled) {
-        window.location.href = 'registrationsuccess.html';
-    }
-});
+document.addEventListener('mousemove', e => {
+cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
 
-updateSubmitButton();
-</SCRIPT>
+document.addEventListener('click', () => {
+cursor.classList.add("expand");
+
+setTimeout(() => {
+cursor.classList.remove("expand");
+}, 500)
+})
+</script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
