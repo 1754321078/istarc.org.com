@@ -1655,7 +1655,7 @@ select:focus::before {
   }
   .instructions li a{
     color: white;
-    font-size: 14px;
+    font-size: 15px;
   }
   .share-button {
     background: none;
