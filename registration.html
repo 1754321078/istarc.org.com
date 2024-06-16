@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+istration<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -390,7 +390,7 @@ function sendEmail(event) {
         SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
         To: 'sohorabdue@gmail.com',
         From: "sohorabdue@gmail.com",
-        Subject: "New Message from Contact Form",
+        Subject: "New Message from Registration Form",
         Body: ebody
     }).then(
         response => {
@@ -434,7 +434,45 @@ cursor.classList.remove("expand");
 })
 </script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
+    const submitButton = document.querySelector('.submit-button');
 
+    function checkFormFields() {
+        let allFilled = true;
+        formInputs.forEach(input => {
+            if (input.type === 'checkbox') {
+                if (!input.checked) {
+                    allFilled = false;
+                }
+            } else if (!input.value) {
+                allFilled = false;
+            }
+        });
+        return allFilled;
+    }
+
+    function updateSubmitButton() {
+        if (checkFormFields()) {
+            submitButton.disabled = false;
+            submitButton.style.cursor = "pointer";
+        } else {
+            submitButton.disabled = true;
+            submitButton.style.cursor = "not-allowed";
+        }
+    }
+
+    formInputs.forEach(input => {
+        input.addEventListener('input', updateSubmitButton);
+        if (input.type === 'checkbox') {
+            input.addEventListener('change', updateSubmitButton);
+        }
+    });
+
+    updateSubmitButton();
+});
+</script>
 <script src="script.js"></script>
 </body>
 </html>
