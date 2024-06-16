@@ -1635,7 +1635,7 @@ select:focus::before {
     text-align: left;
   }
   
-  .instructions li {
+  .instructions li a{
    
     font-size: 20px;
 
