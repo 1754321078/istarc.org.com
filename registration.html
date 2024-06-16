@@ -109,7 +109,7 @@
                             </h3>
                         </div>
                     </div>
-                    <form class="participation-form" onsubmit="sendEmail(event)"  onsubmit="handleSubmit(event)">
+                    <form class="participation-form" onsubmit="sendEmail(event)">
                         <div class="form-group">
                             <div class="form-item">
                                 <label for="teamLeader">Team leader *</label>
@@ -340,42 +340,27 @@
     
     const ebody = `
         <b>Sign Us As: </b> ${signAs}
-        <br/>
-        <b>Event Type: </b> ${eventType}
-        <br/>
-        <b>Team Leader: </b> ${teamLeader}
-        <br/>
-        <b>Your Name: </b> ${memberName}
-        <br/>
-        <b>Team Name: </b> ${teamName}
-        <br/>
+        <br/> <b>Event Type: </b> ${eventType} 
+        <br/> <b>Team Leader: </b> ${teamLeader}
+        <br/> <b>Your Name: </b> ${memberName} <br/>
+        <b>Team Name: </b> ${teamName} <br/> 
         <b>Team Leader Email: </b> ${teamLeaderEmail}
-        <br/>
-        <b>Member 1 Name: </b> ${member1Name}
-        <br/>
-        <b>Member 1 Email: </b> ${member1Email}
-        <br/>
-        <b>Member 2 Name: </b> ${member2Name}
-        <br/>
-        <b>Member 2 Email: </b> ${member2Email}
-        <br/>
-        <b>Member 3 Name: </b> ${member3Name}
-        <br/>
-        <b>Member 3 Email: </b> ${member3Email}
-        <br/>
-        <b>Transaction ID: </b> ${transactionId}
-        <br/>
-        <b>Transaction Number: </b> ${transactionNum}
-        <br/>
-        <b>CA Reference: </b> ${ca}
-        <br/>
+        <br/> <b>Member 1 Name: </b> ${member1Name}
+        <br/> <b>Member 1 Email: </b> ${member1Email}
+        <br/> <b>Member 2 Name: </b> ${member2Name}
+        <br/> <b>Member 2 Email: </b> ${member2Email} 
+        <br/> <b>Member 3 Name: </b> ${member3Name}
+        <br/> <b>Member 3 Email: </b> ${member3Email}
+        <br/> <b>Transaction ID: </b> ${transactionId}
+        <br/> <b>Transaction Number: </b> ${transactionNum}
+        <br/> <b>CA Reference: </b> ${ca} <br/>
     `;
     
         Email.send({
             SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
             To: 'sohorabdue@gmail.com',
             From: "sohorabdue@gmail.com",
-            Subject: "New Message from Contact Form",
+            Subject: "New Message from Registration Form",
             Body: ebody
         }).then(
             response => {
