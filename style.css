@@ -996,7 +996,9 @@ background-repeat: no-repeat;
     grid-template-columns: 1fr;
     justify-items: center;
 }
-
+#eventpart:hover{
+    transform: scale(1.0099);
+}
 #sponsors{
     display: flex;
     flex-wrap: wrap;
