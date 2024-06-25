@@ -272,7 +272,7 @@ h1 , h2, h3 , h4 , h5 , h6{
     height: 90vh; 
     overflow: hidden;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(8, 9, 17, 0.979)), url("img/bg.jpg");
+background: linear-gradient(rgb(0 0 0 / 88%), rgba(8, 9, 17, 0.979)), url(img/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:top;
