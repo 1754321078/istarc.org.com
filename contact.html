@@ -7,59 +7,56 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
 </head>
 <body>
     
     <div class="cursor"></div>
     <section id="Home-Nav">
         <div id="header">
-        <div id="logo">
-           <h3>ISTARC</h3>
-        </div>
-        <ul id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a>Events</a>
-            <ul id="dropdown">
-                <div>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                </div>
-                <div>
-                    <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-               
-                </div>
-                <div>
-                    <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-                <li><a href="event.html">Hello World !</a></li>
-               
-                </div>
+            <div id="logo">
+                <h3>ISTARC</h3>
+            </div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="event.html">Events</a>
+                    <!-- <ul id="dropdown">
+                        <div>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        </div>
+                        <div>
+                            <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                       
+                        </div>
+                        <div>
+                            <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        <li><a href="event.html">Hello World !</a></li>
+                        </div>
+                    </ul> -->
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">Faq</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <a href="#" id="close"><i class="far fa-times" style="color: white;"></i></a>
             </ul>
-
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faq.html">Faq</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-       <a href="#" id="close"><i class="far fa-times" style="color: white;"></i></a> </ul>
-    <div id="button">
-        <a href="registration.html" >Register Now</a></div>  
-                  <div id="mobile">
-                  <i id="bar" class="fas fa-outdent"  style="color: white;"></i>
-                  </div> 
-    </div>
-    
-    </div>
+            <div id="button" onclick="playAudio()">
+                <a href="registration.html">Register Now</a>
+            </div>
+            <div id="mobile">
+                <i id="bar" class="fas fa-outdent" style="color: white;"></i>
+            </div>
+        </div>
     </section>
 
 <section id="home-about">
@@ -108,7 +105,7 @@
         <div class="box">
             <div class="contact form">
                 <a>Send a Message</a>
-                <form onsubmit="sendEmail(event)"  onsubmit="handleSubmit(event)">
+                <form onsubmit="sendEmail(event)">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
@@ -138,7 +135,7 @@
                         </div>
                         <div class="row50">
                             <div class="inputBox">
-                                <input type="submit" value="Send" class="submit-con">
+                                <input type="submit" value="Send">
                             </div>
                         </div>
                     </div>
@@ -172,7 +169,7 @@
     <div id="event-part">
         <h4>Do you want to participate?</h4><br><br>
         <div id="part">
-            <a href="registration.html">Participate Now !</a>
+            <a>Participate Now !</a>
         </div>
     </div>
  
@@ -279,12 +276,7 @@
 </style>
 
 <div id="success-popup">Your message has been sent successfully!</div>
-<SCRIPT>
- function handleSubmit(event) {
-            event.preventDefault();
-            window.location.href = 'contact.html';
-        }
-</SCRIPT>
+
 <script>
 const bar = document.getElementById('bar');
 const close = document.getElementById('close');
@@ -379,4 +371,3 @@ cursor.classList.remove("expand");
 <script src="script.js"></script>
 </body>
 </html>
-
