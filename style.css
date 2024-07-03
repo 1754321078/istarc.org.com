@@ -1509,7 +1509,7 @@ select:focus::before {
  width: 90%;
  padding: 100px;
     margin: 0 auto;
-    background-color: #0e0f18;
+    background-color:#0e0f184a;
    
     border-radius: 8px;
     border: 1px solid rgba(69, 143, 255, 0.096);
