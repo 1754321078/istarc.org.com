@@ -401,31 +401,5 @@
     
     <script src="https://smtpjs.com/v3/smtp.js">
 </script>
-<SCRIPT>
-const formInputs = document.querySelectorAll('.participation-form input, .participation-form select');
-const submitButton = document.querySelector('.submit-button');
-
-function checkFormFields() {
-    let allFilled = true;
-    formInputs.forEach(input => {
-        if (!input.value || (input.type === 'checkbox' && !input.checked)) {
-            allFilled = false;
-        }
-    });
-    return allFilled;
-}
-
-function updateSubmitButton() {
-    if (checkFormFields()) {
-        submitButton.disabled = false;
-        submitButton.style.cursor = "pointer";
-    } else {
-        submitButton.disabled = true;
-        submitButton.style.cursor = "not-allowed";
-    }
-}
-
-updateSubmitButton();
-</SCRIPT>
 </body>
 </html>
