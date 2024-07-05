@@ -70,17 +70,39 @@
                     </section>
 
 
-    <section id="body">
- <div id="promo-video">
-    <h2>Enroll now our promo video</h2>
-    <video src="img/istarc promo final.mp4" controls style="width: 100%; height: auto; border: 2px solid #00e1ff; border-radius: 10px;">
-        <source src="https://www.facebook.com/ISTARC/videos/485734317296226" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-<p>Marking the passage of time and the culmination of years of anticipation. As the hour strikes twelve, a moment of transformation awaits. Can you truly guess what this "twelve" signifies? It is not merely a time on the clock, but a symbol of awakening—a call to rise from a six-year slumber and chase our dreams with renewed vigor.
-    Join us as we count down to a new era where curiosity meets creativity and every moment is filled with the promise of discovery. The time is now. The stage is set. Let us gather together and make history.</p>
- 
-</div>   </section>
+  <section id="body">
+                        <div id="promo-video" style="position: relative; width: 100%; max-width: 800px; margin: auto;">
+                            <h2>Enroll now our promo video</h2>
+                            <div style="position: relative;">
+                                <video id="video" src="img/istarc promo final.mp4" style="height: auto; border-radius: 10px;">
+                                    <source src="https://www.facebook.com/ISTARC/videos/485734317296226" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <i id="play-button" class='bx bx-play' style="font-size: 64px; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer; display: block;"></i>
+                            </div>
+                            <p>Marking the passage of time and the culmination of years of anticipation. As the hour strikes twelve, a moment of transformation awaits. Can you truly guess what this "twelve" signifies? It is not merely a time on the clock, but a symbol of awakening—a call to rise from a six-year slumber and chase our dreams with renewed vigor.
+                                Join us as we count down to a new era where curiosity meets creativity and every moment is filled with the promise of discovery. The time is now. The stage is set. Let us gather together and make history.</p>
+                        </div>
+                    </section>
+                    <script>
+                        document.getElementById('play-button').addEventListener('click', function() {
+                            var video = document.getElementById('video');
+                            if (video.paused) {
+                                video.play();
+                                this.style.display = 'none';
+                            } else {
+                                video.pause();
+                            }
+                        });
+                
+                        document.getElementById('video').addEventListener('pause', function() {
+                            document.getElementById('play-button').style.display = 'block';
+                        });
+                
+                        document.getElementById('video').addEventListener('play', function() {
+                            document.getElementById('play-button').style.display = 'none';
+                        });
+                    </script>
     <section id="intro">
         <div id="border">
             <div id="summary">
