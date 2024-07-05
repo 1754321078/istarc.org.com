@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 body{
     background-image: url("img/bg.png");
@@ -127,7 +127,7 @@ h1 , h2, h3 , h4 , h5 , h6{
     -webkit-background-clip: text;
     -webkit-text-fill-color:   transparent;
     background-clip: text;
-    
+    font-size: 17px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.5s ease;
@@ -182,12 +182,8 @@ h1 , h2, h3 , h4 , h5 , h6{
   .fas{
      color: white;
   }
-#logo h3{
-    background: white;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color:   transparent;
-            background-clip: text;
-            opacity: 100%;
+#logo img{
+    width: 80px;
 }
 #button, #Participate {
     padding: 8px 30px;
@@ -281,8 +277,10 @@ h1 , h2, h3 , h4 , h5 , h6{
     text-align: center;
     position: relative;
     z-index: 1;
+    
     animation: fadeIn 2s ease-in-out;
 }
+
 #info > * {
     margin: 10px 0;
 }
@@ -339,8 +337,7 @@ p {
     border-radius: 5px;
 }
 #sponsor{
-    height: 30vh;
-    margin-top: 50px;
+    padding: 100px 0;
 }
 #cent-wrapper {
     
@@ -400,13 +397,49 @@ p {
 .item8 { animation-delay: 4s; }
 
 
+#body {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#promo-video {
+    width: 80%;
+    max-width: 900px;
+  gap: 20px;
+    background-color: #0d0b1d17;
+    box-shadow: 0 4px 8px rgba(7, 0, 0, 0.281);
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#promo-video h2{
+    color: white;
+    opacity: 1;
+    text-decoration: cadetblue;
+    font-size: 30px;
+}
+#promo-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: grayscale(0%);
+    transition: filter 0.3s ease;
+
+
+}
 
 #intro{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+
     animation: fadeIn 2s ease-in-out;
     background-image: url("img/bg.png");
 }
@@ -456,6 +489,7 @@ padding: 20px 40px;
     padding: 80px 40px;
     background-color: #0e0f1a28;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.048);
+    cursor: pointer;
 }
 #img{
     width: 5vh;
@@ -477,9 +511,25 @@ padding: 20px 40px;
     margin: 20px 0;
 }
 #sum p{
-    margin-top: 20px;
+    margin: 20px 0;
 }
-
+#sum div li{
+    color: rgb(255, 172, 200);
+}
+#sum div li a{
+    text-decoration: none;
+    background: rgb(255, 255, 255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:   transparent;
+    background-clip: text;
+    opacity: 1;
+}
+#sum div li a:hover{
+    background: rgb(255, 136, 235);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:   transparent;
+    background-clip: text;
+}
 
 @media (max-width: 576px) {
     .footer__bottom {
@@ -569,7 +619,7 @@ padding: 20px 40px;
 
 #eventpart li {
     list-style: square;
-    color: rgb(0, 204, 255);
+    color: rgb(251, 150, 255);
 }
 
 #eventpart li a {
@@ -588,11 +638,11 @@ padding: 20px 40px;
 }
 
 #eventpart li a:hover {
-    color: rgb(0, 204, 255);
+    color: rgb(255, 143, 218);
     text-decoration: underline;
 }
 #eventpart:hover{
-    transform: scale(1.0099);
+    transform: scale(1.0129);
 }
 #head {
     display: flex;
@@ -608,6 +658,7 @@ padding: 20px 40px;
 
 #eventbar {
     margin: 20px 90px;
+    height: auto;
 }
 
 #eventtype {
@@ -646,21 +697,34 @@ padding: 20px 40px;
     height: auto;
     column-gap: 4px;
     row-gap: 4px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: minmax(45px, 1fr);
     grid-template-areas: ". .";
+}
+
+#buttons{
+    display: flex;
+    margin: 20px 0;
+    padding: 8px 30px;
+    border: 2px solid rgb(255, 178, 192);
+    background: rgb(246, 200, 255);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: .6s ease;
+}
+
+#buttons a{
+    color: black;
+    font-weight: bold;
 }
 
 
 
 
-
-
-
-
-
 #faq{
-    height: 30vh;
+margin: 100px 0;
     display: flex;
 
     justify-content: center;
@@ -761,7 +825,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40vh;
+padding: 100px 0;
     background-color: #00000060;
 }
 #info-txt{
@@ -822,6 +886,70 @@ background-repeat: no-repeat;
     padding: 50px 16px 30px 16px;
    
 }
+
+.event{
+    
+}
+
+/* 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 100px;
+}
+
+
+.segment {
+    background-color: #0d0b186b;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.segment:hover {
+    transform: translateY(-5px);
+}
+
+.segment img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: 1s ease;
+}
+.segment img:hover{
+    filter: grayscale(.5);
+}
+.segment-info {
+    padding: 20px;
+}
+
+.segment-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.segment-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.segment-info a {
+    display: inline-block;
+    background-color: #ffbff4;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.segment-info a:hover {
+    box-shadow: 0 0 20px pink;
+    transform: scale(1.015);
+} */
 #texture{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1314,19 +1442,19 @@ border-radius: 50%;
     transform: scale(1.05);
     box-shadow: 0 0 25px rgb(255, 112, 207);
   }
-  #border:hover, #faq-border:hover , #sum:hover{
+  #border:hover, #faq-border:hover {
 
-    border: 3px solid pink;
-    transition: 0.3s ease-in-out;
+    border: 1px solid pink;
+    transition: 0.7s ease-in-out;
 }
 
-#border:hover, #faq-border:hover , #sum:hover{
-    transform: scale(1.009);
+#border:hover, #faq-border:hover, #buttons:hover{
+    transform: scale(1.01);
     box-shadow: 0 0 15px rgb(255, 130, 255);
 }
 .follow i:hover,
 footer a:hover {
-  color: #597de0;
+  color: #f79fff;
 }
 
 #button:hover, #Participate:hover {
@@ -1490,7 +1618,7 @@ select:focus::before {
     opacity: 100%;
   }
   #registration {
-    padding: 50px 0;
+    padding: 50px 10px;
   }
   
   .title {
@@ -1506,12 +1634,12 @@ select:focus::before {
   }
   
   .container {
- width: 90%;
+
  padding: 100px;
     margin: 0 auto;
-    background-color:#0e0f184a;
+    background-color: #0e0f182a;
    
-    border-radius: 8px;
+ 
     border: 1px solid rgba(69, 143, 255, 0.096);
     display: flex;
     align-items: center;
@@ -1521,10 +1649,7 @@ select:focus::before {
     transition: box-shadow 0.3s ease;
    
   }
-  
-  .container:hover {
-    box-shadow: 0 0px 30px rgb(19, 18, 24);
-  }
+
   
   .header {
     text-align: center;
@@ -1777,7 +1902,7 @@ p{
         #form-reg{
             display: block;
         }
-        #sign{
+        #sign , #event{
             padding: 20px 0;
         }
         .form-container {
@@ -1821,7 +1946,9 @@ p{
     }
   }
   
+#sum:hover{
 
+}
 
 
 
@@ -1833,9 +1960,7 @@ p{
     #header #button{
         display: none;
     }
-    #sponsor {
-        margin: 50px 0;
-    }
+    
     #p-1 p{
         margin: 20px 10px;
     }
@@ -1850,6 +1975,9 @@ p{
         #about{
             padding: 0 20px;
 
+}
+#body{
+    height: 110vh;
 }
 
     #about h2{
@@ -1920,10 +2048,7 @@ p{
     font-size:24px;
   
   }
-  #intro{
-    margin-top: 200px;
-	  margin-bottom:500px;
-  }
+
   p{
     font-size: 15px;
   }
@@ -1993,7 +2118,7 @@ p{
 }
 #faq{
  
-    margin-bottom: 65px;
+    margin-bottom: 25px;
 }
 
 .item {
@@ -2031,10 +2156,7 @@ p{
 .wrapper{
     height: 50px;
 }
-#sponsor {
-    height: 20vh;
-    margin-top: 30px;
-}
+
   }
 
 
@@ -2102,7 +2224,13 @@ p{
         grid-template-areas: ". .";
     }
     #eventbar{
-        margin:10px 30px 0 30px;
+        margin:0px 30px 0 30px;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 10px;
     }
    
 }
@@ -2117,7 +2245,6 @@ p{
 }
 @media only screen and (max-width: 401px) {
    
-    #eventbar{
-        margin:50px 20px 140px 20px;
-    }
+   
+   
 }
