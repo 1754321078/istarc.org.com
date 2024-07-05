@@ -32,7 +32,7 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <a href="#" id="close"><i class="far fa-times" style="color: white;"></i></a>
             </ul>
-            <div id="button" onclick="playAudio()">
+            <div id="button">
                 <a href="registration.html">Register Now</a>
             </div>
             <div id="mobile">
@@ -60,10 +60,10 @@
                                 <p>Discover the latent talent of the young generation through creative exploration at the ISTARC Science and Technology Festival. Students from diverse backgrounds showcase innovative projects, fostering a strong platform for future scientists. Join us to witness captivating science projects and solutions aimed at solving real-world problems.</p>
                             </div>
                             <div id="btn">
-                                <div id="Participate" onclick="playAudio()">
+                                <div id="Participate">
                                     <a href="registration.html">Participate Now</a>
                                 </div>
-                                <div id="button" onclick="playAudio()">
+                                <div id="button">
                                     <a href="event.html">Explore More</a>
                                 </div>
                                 
@@ -324,20 +324,6 @@
                 cursor.classList.remove("expand");
             }, 500);
         });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            window.audio = new Audio();
-            audio.src = './img/click.mp3';
-        });
-
-        function playAudio() {
-            if (window.audio) {
-                audio.play();
-            } else {
-                console.error('Audio element not found');
-            }
-        }
     </script>
 </body>
 </html>
