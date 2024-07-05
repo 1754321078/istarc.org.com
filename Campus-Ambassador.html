@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTARC</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+</head>
+<body>
+    <style>
+        #event-solo {
+    margin: 20px 0;
+}
+
+#event-solo h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: white;
+    opacity: 1;
+}
+
+#event-solo select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+#event-solo select[multiple] {
+    height: auto;
+    min-height: 120px;
+}
+
+#event-solo option {
+    padding: 5px;
+}
+h3 a{
+    color: pink;
+    text-decoration: underline;
+}
+li{
+    color: white;
+    opacity: 64%;
+    list-style: square;
+    padding: 5px;
+}
+
+    </style>
+    
+    <div class="cursor"></div>
+    <section id="Home-Nav">
+        <div id="header">
+            <div id="logo">
+                <h3>ISTARC</h3>
+            </div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="event.html">Events</a>
+                    
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">Faq</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <a href="#" id="close"><i class="far fa-times" style="color: white;"></i></a>
+            </ul>
+            <div id="button" onclick="playAudio()">
+                <a href="registration.html">Register Now</a>
+            </div>
+            <div id="mobile">
+                <i id="bar" class="fas fa-outdent" style="color: white;"></i>
+            </div>
+        </div>
+    </section>
+
+
+   
+    <section id="home-about">
+        <div id="info-txt">
+            <h2>About Our Campus Ambassador Program</h2>
+            <p>Our Campus Ambassador program is an exceptional opportunity for dynamic and motivated students to represent our institution on their campuses. As a Campus Ambassador, you will be the face and voice of our organization, helping to spread awareness about our programs, events, and initiatives.</p>
+            
+            <p>By joining our team, you will have the chance to develop your leadership and communication skills, build a strong network of peers and professionals, and gain invaluable experience in event planning and promotion. This role is perfect for those who are passionate about making a difference in their community and who are eager to take on new challenges.</p>
+            
+            <p>Key responsibilities include:</p>
+            <ul>
+                <li>Organizing and promoting events on campus to increase engagement and participation.</li>
+                <li>Sharing information about our programs and initiatives through various channels, including social media and in-person meetings.</li>
+                <li>Acting as a liaison between our organization and the student body, gathering feedback and providing insights.</li>
+                <li>Collaborating with other Campus Ambassadors and team members to brainstorm and implement new ideas.</li>
+            </ul>
+            
+            <p>In return for your dedication and hard work, you will receive exclusive benefits such as:</p>
+            <ul>
+                <li>Recognition as a leader on your campus and within our organization.</li>
+                <li>Opportunities for professional development and mentorship.</li>
+                <li>Access to special events and networking opportunities.</li>
+                <li>A certificate of appreciation and potential letters of recommendation.</li>
+            </ul>
+            
+            <p>We are looking for enthusiastic, proactive, and committed individuals who are ready to make a positive impact. If you are interested in becoming a Campus Ambassador, we encourage you to apply and join our mission to inspire and engage students across the country.</p>
+            
+            <p>Take the first step towards an exciting and rewarding experience. Click below to learn more and begin your journey as a Campus Ambassador:</p>
+            <div id="cta-button">
+                <a href="Campus-Ambassador.html" style="color: rgb(236, 134, 206); text-decoration: underline;">Register Now</a>
+            </div>
+        </div>
+    </section>
+        
+
+
+
+
+        <section id="registration">
+            <div class="title">
+                <p>Registration</p>
+            </div>
+            <div class="container">
+                <div class="header">
+                    <ul class="instructions">
+                        <li><a href="#" target="_blank" class="link" >Welcome To Our Event</a></li>
+                        <li><a href="#" target="_blank" class="link" >Read All of our privacy's and policies</a></li>
+                        <li><a href="#" target="_blank" class="link" >Register now and be scamed</a></li>
+                        <li><a href="#" target="_blank" class="link" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nemo ipsa, temporibus illum magni laboriosam ex voluptatibus voluptatum tenetur! Provident laborum quod iure voluptatum est ipsam modi ratione obcaecati fugiat.</a></li>
+                        <li><a href="#" target="_blank" class="link" >Welcome To Our Event</a></li>
+                        <li><a href="#" target="_blank" class="link" >Read All of our privacy's and policies</a></li>
+                        <li><a href="#" target="_blank" class="link" >Register now and be scamed</a></li>
+                        <li><a href="#" target="_blank" class="link" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nemo ipsa, temporibus illum magni laboriosam ex voluptatibus voluptatum tenetur! Provident laborum quod iure voluptatum est ipsam modi ratione obcaecati fugiat.</a></li>
+                    </ul>
+                </div>
+                <div class="form-container">
+                    <div id="form-reg">
+                        <div id="sign">
+                            <h3>    Register As : Campus Ambassador <br><br>
+                                Want to register us as a Participant?<br><br> <a href="soloevents.html">Click Here.</a>        
+                            </h3>
+                        </div><br>
+                        
+                      
+                    </div>
+                    
+                    <form class="participation-form" onsubmit="sendEmail(event)">
+                        <div class="form-group">
+                            <div class="form-item">
+                                <label for="Member-name">Your Name *</label>
+                                <input type="text" id="CA-name" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-item">
+                                    <label for="member3Name">Institution *</label>
+                                    <input type="text" id="Institution" placeholder="Eg. Ideal School And College" required>
+                                </div>
+
+                        </div>
+                       
+                        
+                        <div class="form-group">
+                            <div class="form-item">
+                                <label for="transactionId">Your Email Address *</label>
+                                <input type="text" id="Email-Address" placeholder="Eg. abc@gmail.com" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="transactionNum">Your Number *</label>
+                                <input type="text" id="transactionNum" placeholder=" Eg. 01624063328" required>
+                                <p class="note"></p>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                        <div class="form-item">
+                                <label for="ca">Enter Your Image Drive Link *</label>
+                                <input type="text" id="ca-image" placeholder="Access Required" >
+
+                            </div>
+                        </div>
+                        
+                        <div class="agreement">
+                            <label>
+                                <input type="checkbox" required> 
+                                <a href="#" target="_blank" class="link">&nbsp;Accept Our Privacy And Policy</a>
+                            </label>
+                        </div>
+                        <input type="submit" value="send" class="submit-button">
+
+                    </form>
+                </div>
+            </div>  
+        </section>
+        
+
+
+
+
+
+
+<section id="faq">
+    <div id="faq-border">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, minus odio. Mollitia blanditiis, praesentium natus voluptate modi soluta consequuntur, ipsam quas necessitatibus corrupti reiciendis suscipit sit dicta? Unde, quos exercitationem.</p><br>
+        <div id="faq-txt">
+            <a>Facing any problems? Go to <a href="" style="color:rgb(236, 134, 206);">FAQ</a></a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="sponsor">
+    <h1>Meet Our Sponsors</h1>
+<div id="cent-wrapper">
+    <div class="wrapper">
+     <div class="item item1">
+       <h3>Lorem Ipsum</h3>
+     </div>
+     <div class="item item2">
+        <h3>Lorem Ipsum</h3>
+     </div>
+     <div class="item item3">
+        <h3>Lorem Ipsum</h3>
+     </div>
+     <div class="item item4">
+        <h3>Lorem Ipsum</h3>
+     </div>
+     <div class="item item5">
+        <h3>Lorem Ipsum</h3>
+     </div>
+     <div class="item item6">
+        <h3>Lorem Ipsum</h3>
+     </div>
+     <div class="item item7">
+        <h3>Lorem Ipsum</h3>
+     </div>
+    
+
+</div></div>
+</section>
+
+
+<footer class="s-1">
+    <div class="c">
+        <a href="" style="text-decoration: none;color: rgba(255, 255, 255, 0.733);font-weight:500;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;">Ideal Science and Technology<br>Aiming Research Council</a><br>
+        <h4>Contact</h4>
+        <p><strong>Address: </strong>Banasree Dhaka 1000 C block Road no 4</p>
+        <p><strong>Phone: </strong>(+880)1308-556424</p>
+        <p><strong>Hours: </strong>10:00 - 18:00, Sat - Thus</p>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f" style="font-weight: 400;"></i>
+                <i class="fab fa-instagram" style="font-weight: 400;"></i>
+                <i class="fab fa-twitter" style="font-weight: 400;"></i>
+                <i class="fab fa-pinterest" style="font-weight: 400;"></i>
+                <i class="fab fa-youtube" style="font-weight: 400;"></i>
+            </div>
+        </div>
+    </div>
+    <div class="c">
+        <h4>About</h4>
+        <a href="">About Us</a>
+        <a href="">Delivery Information</a>
+        <a href="">Privacy & Policy</a>
+        <a href="">Terms & Conditions</a>
+        <a href="">Contact Us</a>
+    </div>
+    <div class="c">
+        <h4>My Account</h4>
+        <a href="">Sign In</a>
+        <a href="">Delivery Information</a>
+        <a href="">View Cart</a>
+        <a href="">My Wishlist</a>
+        <a href="">Track My Order</a>
+        <a href="">Help</a>
+    </div>
+    <div class="copyright">
+        <p>© 2024, ISTARC Created by Sohorab Mahmud Fahim.<a href="https://www.facebook.com/fahimlwebdeveloper" style="font-weight:600;">Hire Now.</a></p>
+    </div>
+</footer>
+
+<div id="success-popup">Your message has been sent successfully!</div>
+<style>
+#success-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+</style>
+<script>
+    function sendEmail(event) {
+        event.preventDefault();
+
+        const CAname = document.getElementById('CA-name').value;
+        const Institution = document.getElementById("Institution").value;
+        const EmailAddress = document.getElementById("Email-Address").value;
+        const transactionNum = document.getElementById("transactionNum").value;
+        const caimage = document.getElementById("ca-image").value;
+        
+        const ebody1 = `
+            <b>Registered As: Campus Ambassador </b>
+            <br/>
+            <b>Campus Ambassadors Name: </b> ${CAname}
+            <br/>
+            <b>Institution: </b> ${Institution}
+            <br/>
+            <b>Email: </b> ${EmailAddress}
+            <br/>
+            <b>Number: </b> ${transactionNum}
+            <br/>
+            <b>CA Image: </b> ${caimage}
+            <br/>
+            <b>CA's Reference Code: </b> ${EmailAddress}
+        `;
+        
+        const ebody2 = `
+            <b>Congratulations </b> ${CAname}
+            <br/>
+            <b>Your registration has been successful </b>
+            <br/>
+            <b>Your Entry Code is : </b> ${transactionNum}
+            <br/>
+            <b>Your Reference code : </b> ${EmailAddress}
+        `;
+        
+        Email.send({
+            SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
+            To: 'sohorabdue@gmail.com',
+            From: "sohorabdue@gmail.com",
+            Subject: "New Message from Campus Ambassador Form",
+            Body: ebody1
+        }).then(
+            response => {
+                showPopup("First email sent successfully.");
+                
+                Email.send({
+                    SecureToken: "1de67f01-c8fc-4d2e-a08c-ca00c7bb7388",
+                    To: EmailAddress,
+                    From:'sohorabdue@gmail.com',
+                    Subject: "Congratulations on Registration",
+                    Body: ebody2
+                }).then(
+                    response => {
+                        showPopup("Second email sent successfully.");
+                    }
+                ).catch(
+                    error => {
+                        showPopup("Failed to send the second email. Please try again.");
+                    }
+                );
+            }
+        ).catch(
+            error => {
+                showPopup("Failed to send the first email. Please try again.");
+            }
+        );
+    }
+    
+    function showPopup(message) {
+        const successPopup = document.getElementById('success-popup');
+        successPopup.textContent = message;
+        successPopup.style.display = "block";
+        setTimeout(() => {
+            successPopup.style.display = "none";
+        }, 5000);
+    }
+</script>
+
+
+
+<script>
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+    const successPopup = document.getElementById('success-popup');
+    
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active');
+            nav.style.zIndex = '1000';
+        });
+    }
+    
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active');
+            nav.style.zIndex = 'initial'; 
+        });
+    }
+    
+  
+    </script>
+    
+    
+    <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+
+document.querySelectorAll('#solo-events input[type="checkbox"]').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+        var checkedCheckboxes = document.querySelectorAll('#solo-events input[type="checkbox"]:checked');
+        if (checkedCheckboxes.length > 5) {
+            this.checked = false;
+            alert('You can select a maximum of 5 events.');
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
